@@ -162,39 +162,29 @@
     <article id="post-hexo个人博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/12/hexo个人博客搭建/">Hexo个人博客搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/12/hexo个人博客搭建/" class="archive-article-date">
+  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、安装<code>git</code> 和<code>Node</code><br>2、在<code>cmd</code>安装<code>hexo</code></p>
-<blockquote>
+        <h2 id="1、安装git-和Node"><a href="#1、安装git-和Node" class="headerlink" title="1、安装git 和Node"></a>1、安装<code>git</code> 和<code>Node</code></h2><h2 id="2、在cmd安装hexo"><a href="#2、在cmd安装hexo" class="headerlink" title="2、在cmd安装hexo"></a>2、在<code>cmd</code>安装<code>hexo</code></h2><blockquote>
 <p><code>npm install -g hexo-cli</code><br>在安装过程中遇到<code>npm</code>卡顿的情况，解决方法就是修改安装源。<br><code>npm config set registry http://registry.cnpmjs.org</code><br><code>npm info underscore</code>如果上面配置正确就会输出一些内容</p>
 </blockquote>
-<p>3、在桌面创建一个<code>Blog</code>文件夹在cmd命令行中 <code>cd Blog</code></p>
-<blockquote>
-<p>执行<code>hexo init</code><br><code>npm install</code></p>
-</blockquote>
-<p>4、根目录配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">title: ReZhangxin&apos;s Blog</div><div class="line">subtitle: 凉城北岸的钟声</div><div class="line">description: fighting</div><div class="line">author: 张鑫</div><div class="line">language: zh-CN</div><div class="line">timezone: Asia/Shanghai</div><div class="line"></div><div class="line"></div><div class="line">theme: yilia</div><div class="line"></div><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:ReZhangxin/ReZhangxin.github.io.git</div><div class="line">  branch: master</div><div class="line"></div><div class="line">menu:</div><div class="line">  about: /about</div><div class="line"></div><div class="line">  #头像设置</div><div class="line">avatar: http://orj6ooggn.bkt.clouddn.com/icon.png</div></pre></td></tr></table></figure>
-<p>5、主题的配置<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">hexo-theme-yilia</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div></pre></td><td class="code"><pre><div class="line"># Header</div><div class="line"></div><div class="line">menu:</div><div class="line">  Home: /</div><div class="line">  Note: /tags/随笔/</div><div class="line"></div><div class="line"># SubNav</div><div class="line">subnav:</div><div class="line">  github: &quot;#&quot;</div><div class="line">  weibo: &quot;#&quot;</div><div class="line">  rss: &quot;#&quot;</div><div class="line">  zhihu: &quot;#&quot;</div><div class="line">  #qq: &quot;#&quot;</div><div class="line">  #weixin: &quot;#&quot;</div><div class="line">  #jianshu: &quot;#&quot;</div><div class="line">  #douban: &quot;#&quot;</div><div class="line">  #segmentfault: &quot;#&quot;</div><div class="line">  #bilibili: &quot;#&quot;</div><div class="line">  #acfun: &quot;#&quot;</div><div class="line">  #mail: &quot;mailto:litten225@qq.com&quot;</div><div class="line">  #facebook: &quot;#&quot;</div><div class="line">  #google: &quot;#&quot;</div><div class="line">  #twitter: &quot;#&quot;</div><div class="line">  #linkedin: &quot;#&quot;</div><div class="line"></div><div class="line">rss: /atom.xml</div><div class="line"></div><div class="line"># 是否需要修改 root 路径</div><div class="line"># 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，</div><div class="line"># 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</div><div class="line">root: </div><div class="line"></div><div class="line"># Content</div><div class="line"></div><div class="line"># 文章太长，截断按钮文字</div><div class="line">excerpt_link: more</div><div class="line"># 文章卡片右下角常驻链接，不需要请设置为false</div><div class="line">show_all_link: &apos;展开全文&apos;</div><div class="line"># 数学公式</div><div class="line">mathjax: false</div><div class="line"># 是否在新窗口打开链接</div><div class="line">open_in_new: false</div><div class="line"></div><div class="line"># 打赏</div><div class="line"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</div><div class="line">reward_type: 0</div><div class="line"># 打赏wording</div><div class="line">reward_wording: &apos;谢谢你请我吃糖果&apos;</div><div class="line"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</div><div class="line">alipay: </div><div class="line"># 微信二维码图片地址</div><div class="line">weixin: </div><div class="line"></div><div class="line"># 目录</div><div class="line"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</div><div class="line">toc: 1</div><div class="line"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</div><div class="line">toc_hide_index: true</div><div class="line"># 目录为空时的提示</div><div class="line">toc_empty_wording: &apos;这么懒！什么都没写&apos;</div><div class="line"></div><div class="line"># 是否有快速回到顶部的按钮</div><div class="line">top: true</div><div class="line"></div><div class="line"># Miscellaneous</div><div class="line">baidu_analytics: &apos;&apos;</div><div class="line">google_analytics: &apos;&apos;</div><div class="line">favicon: /favicon.png</div><div class="line"></div><div class="line">#你的头像url</div><div class="line">avatar: http://orj6ooggn.bkt.clouddn.com/icon.png</div><div class="line"></div><div class="line">#是否开启分享</div><div class="line">share_jia: true</div><div class="line"></div><div class="line">#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus 不需要使用某项，直接设置值为false，或注释掉</div><div class="line">#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/</div><div class="line"></div><div class="line">#1、多说</div><div class="line">duoshuo: true</div><div class="line"></div><div class="line">#2、网易云跟帖</div><div class="line">wangyiyun: false</div><div class="line"></div><div class="line">#3、畅言</div><div class="line">changyan_appid: false</div><div class="line">changyan_conf: false</div><div class="line"></div><div class="line">#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的</div><div class="line">disqus: false</div><div class="line"></div><div class="line"># 样式定制 - 一般不需要修改，除非有很强的定制欲望…</div><div class="line">style:</div><div class="line">  # 头像上面的背景颜色</div><div class="line">  header: &apos;#4d4d4d&apos;</div><div class="line">  # 右滑板块背景</div><div class="line">  slider: &apos;linear-gradient(200deg,#a0cfe4,#e8c37e)&apos;</div><div class="line"></div><div class="line"># slider的设置</div><div class="line">slider:</div><div class="line">  # 是否默认展开tags板块</div><div class="line">  showTags: false</div><div class="line"></div><div class="line"># 智能菜单</div><div class="line"># 如不需要，将该对应项置为false</div><div class="line"># 比如</div><div class="line">#smart_menu:</div><div class="line">#  friends: false</div><div class="line">smart_menu:</div><div class="line">  innerArchive: &apos;所有文章&apos;</div><div class="line">  friends: false</div><div class="line">  aboutme: &apos;关于我&apos;</div><div class="line"></div><div class="line">friends:</div><div class="line">  友情链接1: http://localhost:4000/</div><div class="line">  友情链接2: http://localhost:4000/</div><div class="line">  友情链接3: http://localhost:4000/</div><div class="line">  友情链接4: http://localhost:4000/</div><div class="line">  友情链接5: http://localhost:4000/</div><div class="line">  友情链接6: http://localhost:4000/</div><div class="line"></div><div class="line">aboutme: 张鑫，&lt;br&gt; 奋斗于前端路上，&lt;br&gt;最喜欢的一句话，&lt;br&gt;勿忘初心，方得始终。</div></pre></td></tr></table></figure>
-<p>6、<code>hexo s</code>打开<code>localhost:4000</code></p>
-<p>7、常用命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo version  查看版本</div><div class="line">hexo clean 清除缓存文件 (db.json) 和已生成的静态文件 (public)</div><div class="line">hexo g   等于hexo generate # 生成静态文件</div><div class="line">hexo s   等于hexo server # 本地预览</div><div class="line">hexo d  等于hexo deploy # 部署，可与hexo g合并为 hexo d -g</div></pre></td></tr></table></figure></p>
-<p>8、安装<code>git</code><br>1) 生成SSH</p>
-<blockquote>
-<p><code>ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;</code>一路回车密码空就行<br><strong>一定要注意必须要等待邮件发过来再去进行下一步</strong><br><strong>（成功的钥匙图标是绿的不是黑的）</strong><br>然后等待邮件发过来点击进去在桌面的Administrator中找到<br><code>.ssh</code>文件夹中的<code>id_rsa.pub</code> 中的秘钥添加到<code>github</code>中的<code>SSH Keys</code><br>链接Git <code>$ ssh -T git@github.com</code><br>成功提示<code>Hi ReZhangxin! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code></p>
-</blockquote>
-<p>2)配置信息</p>
-<blockquote>
-<p> $ git config –global user.name “ReZhangxin”<br> $ git config –global user.email “1307881527@qq.com”<br> 没有回答就是好回答说明没有问题</p>
-</blockquote>
-<p>3)部署到Github</p>
-<blockquote>
-<p><code>npm install hexo-deployer-git --save</code></p>
-</blockquote>
-<p>9、执行</p>
-<blockquote>
-<p><code>hexo clean</code><br><code>hexo g</code><br><code>hexo d</code></p>
-</blockquote>
-
+        
+          <a class="article-more-a" href="/2017/08/12/hexo个人博客搭建/#more">more >></a>
+        
       
 
       
@@ -202,11 +192,26 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Blog搭建</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Git搭建</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/11/hexo个人博客搭建/">快看全文吧~~ >></a>
+          <a class="article-more-a" href="/2017/08/12/hexo个人博客搭建/">快看全文吧~~ >></a>
         </p>
       
 
@@ -323,6 +328,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Blog搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Git搭建</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
