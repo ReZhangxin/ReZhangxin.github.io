@@ -253,6 +253,88 @@ var _hmt = _hmt || [];
 
 
   
+    <article id="post-ES6class" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/12/ES6class/">ES6的Class</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/12/ES6class/" class="archive-article-date">
+  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="继承与原型链"><a href="#继承与原型链" class="headerlink" title="继承与原型链"></a>继承与原型链</h2><h3 id="使用-Object-create-创建对象"><a href="#使用-Object-create-创建对象" class="headerlink" title="使用 Object.create 创建对象"></a>使用 Object.create 创建对象</h3><blockquote>
+<p><code>ECMAScript5</code>引入新方法：<code>Object.create()</code>可以调用这个方法来创建一个新的对象。新对象的原型就是调用<code>create</code>方法时传入的第一个参数</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/08/12/ES6class/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/12/ES6class/">快看全文吧~~ >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hexo个人博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -306,6 +388,85 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/08/12/hexo个人博客搭建/">快看全文吧~~ >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-scroll" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/12/scroll/">获取浏览器的位置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/12/scroll/" class="archive-article-date">
+  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="关于浏览器各种位置的获取"><a href="#关于浏览器各种位置的获取" class="headerlink" title="关于浏览器各种位置的获取"></a>关于浏览器各种位置的获取</h2><blockquote>
+<p><code>clientWidth</code> <code>offsetWidth</code> <code>scrollTop</code> <code>innerHeight</code></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="built_in">window</span>.innerHeight; <span class="comment">//获得浏览器窗口的内容区域的高度,包含水平滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> b = <span class="built_in">window</span>.innerWidth;  <span class="comment">//获得浏览器窗口的内容区域的宽度,包含垂直滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> loc = Window.location;  <span class="comment">//获取、设置window对象的location, 或者当前的 URL.</span></div><div class="line"><span class="keyword">const</span> y = <span class="built_in">window</span>.scrollY;     <span class="comment">//y 是文档从顶部开始滚动过的像素值。</span></div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/08/12/scroll/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/12/scroll/">快看全文吧~~ >></a>
         </p>
       
 
@@ -418,85 +579,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-scroll" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/12/scroll/">获取浏览器的位置</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/12/scroll/" class="archive-article-date">
-  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="关于浏览器各种位置的获取"><a href="#关于浏览器各种位置的获取" class="headerlink" title="关于浏览器各种位置的获取"></a>关于浏览器各种位置的获取</h2><blockquote>
-<p><code>clientWidth</code> <code>offsetWidth</code> <code>scrollTop</code> <code>innerHeight</code></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="built_in">window</span>.innerHeight; <span class="comment">//获得浏览器窗口的内容区域的高度,包含水平滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> b = <span class="built_in">window</span>.innerWidth;  <span class="comment">//获得浏览器窗口的内容区域的宽度,包含垂直滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> loc = Window.location;  <span class="comment">//获取、设置window对象的location, 或者当前的 URL.</span></div><div class="line"><span class="keyword">const</span> y = <span class="built_in">window</span>.scrollY;     <span class="comment">//y 是文档从顶部开始滚动过的像素值。</span></div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/08/12/scroll/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/12/scroll/">快看全文吧~~ >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-video" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -556,88 +638,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/08/12/video/">快看全文吧~~ >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6class" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/12/ES6class/">ES6的Class</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/12/ES6class/" class="archive-article-date">
-  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="继承与原型链"><a href="#继承与原型链" class="headerlink" title="继承与原型链"></a>继承与原型链</h2><h3 id="使用-Object-create-创建对象"><a href="#使用-Object-create-创建对象" class="headerlink" title="使用 Object.create 创建对象"></a>使用 Object.create 创建对象</h3><blockquote>
-<p><code>ECMAScript5</code>引入新方法：<code>Object.create()</code>可以调用这个方法来创建一个新的对象。新对象的原型就是调用<code>create</code>方法时传入的第一个参数</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/08/12/ES6class/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/12/ES6class/">快看全文吧~~ >></a>
         </p>
       
 
@@ -765,6 +765,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Blog搭建</a>
               </li>
              
@@ -778,10 +782,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">FlexBox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
             <div class="clearfix"></div>
