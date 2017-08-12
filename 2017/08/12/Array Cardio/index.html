@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zhangss.win">
-  <title>Archives: 2017 | ReZhangxin&#39;s Blog</title>
+  <title>Array Cardio | ReZhangxin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="fighting">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ReZhangxin&#39;s Blog">
-<meta property="og:url" content="http://zhangss.win/archives/2017/index.html">
+  <meta name="description" content="Array Cardio主要目的 熟悉Array的一些方法 filter map sort reduce some every find splice slice concat  在详细介绍之前，很有必要对ECMAScript5中的数组方法做一个概述。首先，大多数方法的第一个参数接收一个函数，并且对数组的每一个元素（或一些元素）调用一次该函数如果是稀疏数组，对不存在的元素不调用传递的函数。在大多数">
+<meta name="keywords" content="Array,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Array Cardio">
+<meta property="og:url" content="http://zhangss.win/2017/08/12/Array Cardio/index.html">
 <meta property="og:site_name" content="ReZhangxin&#39;s Blog">
-<meta property="og:description" content="fighting">
+<meta property="og:description" content="Array Cardio主要目的 熟悉Array的一些方法 filter map sort reduce some every find splice slice concat  在详细介绍之前，很有必要对ECMAScript5中的数组方法做一个概述。首先，大多数方法的第一个参数接收一个函数，并且对数组的每一个元素（或一些元素）调用一次该函数如果是稀疏数组，对不存在的元素不调用传递的函数。在大多数">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/1501476140%281%29.png">
+<meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/arr.png">
+<meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/1501645896%281%29.png">
+<meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/1501656946%281%29.png">
+<meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/1501658504%281%29.png">
+<meta property="og:updated_time" content="2017-08-12T05:28:07.780Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ReZhangxin&#39;s Blog">
-<meta name="twitter:description" content="fighting">
+<meta name="twitter:title" content="Array Cardio">
+<meta name="twitter:description" content="Array Cardio主要目的 熟悉Array的一些方法 filter map sort reduce some every find splice slice concat  在详细介绍之前，很有必要对ECMAScript5中的数组方法做一个概述。首先，大多数方法的第一个参数接收一个函数，并且对数组的每一个元素（或一些元素）调用一次该函数如果是稀疏数组，对不存在的元素不调用传递的函数。在大多数">
+<meta name="twitter:image" content="http://otxurl2qj.bkt.clouddn.com/1501476140%281%29.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -167,36 +175,132 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Array Cardio" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/12/Array Cardio/" class="archive-article-date">
-  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/12/Array Cardio/">Array Cardio</a>
+    <h1 class="article-title" itemprop="name">
+      Array Cardio
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/08/12/Array Cardio/" class="archive-article-date">
+  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Array-Cardio"><a href="#Array-Cardio" class="headerlink" title="Array Cardio"></a>Array Cardio</h2><h3 id="主要目的"><a href="#主要目的" class="headerlink" title="主要目的"></a>主要目的</h3><blockquote>
+<p>熟悉Array的一些方法 <code>filter</code> <code>map</code> <code>sort</code> <code>reduce</code> <code>some</code> <code>every</code> <code>find</code> <code>splice</code> <code>slice</code> <code>concat</code> </p>
+<p>在详细介绍之前，很有必要对ECMAScript5中的数组方法做一个概述。<br>首先，大多数方法的第一个参数接收一个函数，并且对数组的每一个元素（或一些元素）调用一次该函数<br>如果是稀疏数组，对不存在的元素不调用传递的函数。<br>在大多数情况下，调用提供的函数使用三个参数：数组元素、元素的索引、数组本身<br>通常只需要第一个参数值，可以忽略后两个参数。第二个参数是可选的，如果有第二个参数<br>则调用的函数被看做是第二个参数的方法</p>
+<p><strong>稀疏数组</strong> 包含从0开始的不连续索引的数组 <code>const a = new Array(6)</code>数组没有元素但<code>a.length</code>是6</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-filter"><a href="#1-filter" class="headerlink" title="1.filter"></a>1.filter</h2><blockquote>
+<p>过滤操作 <code>filter()</code>方法创建一个新数组，其包含通过所提供函数实现的测试的所有元素</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> youth = <span class="function"><span class="params">value</span> =&gt;</span> value&gt;=<span class="number">16</span>&amp;&amp;value&lt;=<span class="number">28</span>;</div><div class="line"><span class="keyword">let</span> [...spread] = [<span class="number">12</span>,<span class="number">8</span>,<span class="number">17</span>,<span class="number">99</span>,<span class="number">23</span>,<span class="number">55</span>];</div><div class="line"><span class="keyword">let</span> Youth = spread.filter(youth);</div><div class="line"><span class="comment">// Youth is [17,23]</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> fifteen = inventors.filter(<span class="function"><span class="params">inventor</span> =&gt;</span> (inventor.year &gt;= <span class="number">1500</span> &amp;&amp; inventor.year &lt; <span class="number">1600</span>));</div><div class="line"><span class="built_in">console</span>.table(fifteen);</div></pre></td></tr></table></figure>
+<h2 id="2-map"><a href="#2-map" class="headerlink" title="2.map"></a>2.map</h2><blockquote>
+<p><code>map()</code>方法创建一个新的数组，其结果是这个数组的每个元素都调用该方法所提供的函数后返回的结果</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">let</span> square = num.map( <span class="function"><span class="params">x</span> =&gt;</span> x*x );</div><div class="line"><span class="comment">// num is still [1,2,3,4,5]</span></div><div class="line"><span class="comment">// square is new array[1,4,9,16,25]</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> fullNames = inventors.map(<span class="function"><span class="params">inventor</span> =&gt;</span> <span class="string">`<span class="subst">$&#123;inventor.first&#125;</span> <span class="subst">$&#123;inventor.last&#125;</span>`</span>);</div></pre></td></tr></table></figure>
+<h2 id="3-sort"><a href="#3-sort" class="headerlink" title="3.sort"></a>3.sort</h2><blockquote>
+<p><code>sort()</code>方法 对数组的元素进行排序，并且返回数组，默认排序顺序是根据字符串Unicode码点</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> hero = [<span class="string">"德玛"</span>,<span class="string">"鸡"</span>,<span class="string">"蛋"</span>,<span class="string">"卡特"</span>];</div><div class="line">hero.sort();</div><div class="line"><span class="comment">//["卡特", "德玛", "蛋", "鸡"]</span></div><div class="line"><span class="keyword">const</span> test =[<span class="string">'hello'</span>,<span class="string">'nihao'</span>,<span class="string">'love'</span>,<span class="string">'apple'</span>,<span class="string">'zoo'</span>];</div><div class="line">test.sort();</div><div class="line"><span class="comment">//["apple", "hello", "love", "nihao", "zoo"]</span></div><div class="line"><span class="keyword">const</span> test2 =[<span class="number">3</span>,<span class="number">4</span>,<span class="number">11</span>,<span class="number">1</span>,<span class="number">23</span>,<span class="number">2</span>,<span class="number">5</span>];</div><div class="line">test2.sort();</div><div class="line"><span class="comment">//[1, 11, 2, 23, 3, 4, 5]</span></div><div class="line"><span class="keyword">const</span> test3 = [<span class="string">'word'</span>, <span class="string">'Word'</span>, <span class="string">'1 Word'</span>, <span class="string">'2 Words'</span>];</div><div class="line">test3.sort(); </div><div class="line"><span class="comment">// ['1 Word', '2 Words', 'Word', 'word']</span></div><div class="line"><span class="comment">// 在Unicode中, 数字在大写字母之前</span></div><div class="line"><span class="comment">// 大写字母在小写字母之前</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>arr.sort(compareFunction)</code>compareFunction可选，用来指定按照某种顺序进行排列的函数。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数字的比较可以简单的以 a-b 升序排列</span></div><div class="line"><span class="keyword">const</span> num = [<span class="number">1</span>,<span class="number">22</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">11</span>,<span class="number">2</span>];</div><div class="line">num.sort(<span class="function">(<span class="params">a,b</span>) =&gt;</span> a-b);</div><div class="line"><span class="comment">// [1, 2, 3, 6, 7, 11, 22]</span></div><div class="line"></div><div class="line"><span class="comment">//对象可以按照某个属性排序</span></div><div class="line"><span class="keyword">const</span> info =[</div><div class="line">     &#123;<span class="attr">name</span>:<span class="string">"德玛"</span>,<span class="attr">value</span>:<span class="number">21</span>&#125;,</div><div class="line">     &#123;<span class="attr">name</span>:<span class="string">"卡特"</span>,<span class="attr">value</span>:<span class="number">22</span>&#125;,</div><div class="line">     &#123;<span class="attr">name</span>:<span class="string">"劫"</span>,<span class="attr">value</span>:<span class="number">23</span>&#125;,</div><div class="line">     &#123;<span class="attr">name</span>:<span class="string">"男刀"</span>,<span class="attr">value</span>:<span class="number">20</span>&#125;,</div><div class="line">     &#123;<span class="attr">name</span>:<span class="string">"女警"</span>,<span class="attr">value</span>:<span class="number">18</span>&#125;</div><div class="line">];</div><div class="line"><span class="keyword">const</span> hero=info.sort(<span class="function">(<span class="params">a,b</span>) =&gt;</span> a.value &gt; b.value ? <span class="number">1</span> : <span class="number">-1</span>);</div><div class="line"><span class="built_in">console</span>.table(hero);</div></pre></td></tr></table></figure>
+<p><img src="http://otxurl2qj.bkt.clouddn.com/1501476140%281%29.png" alt="info"></p>
+<h2 id="4-reduce"><a href="#4-reduce" class="headerlink" title="4.reduce"></a>4.reduce</h2><blockquote>
+<p>reduce()方法对累加器和数组中的每个元素应用一个函数，将其减少为单个值。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> add = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].reduce(<span class="function">(<span class="params">sum,value</span>) =&gt;</span>&#123;</div><div class="line">      <span class="keyword">return</span> sum + value;</div><div class="line">&#125;,<span class="number">0</span>);</div><div class="line"><span class="comment">// add is 6</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> totalYears = inventors.reduce(<span class="function">(<span class="params">total,inventor</span>) =&gt;</span> &#123;</div><div class="line">     <span class="keyword">return</span> total + (inventor.passed - inventor.year);</div><div class="line">&#125;,<span class="number">0</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> people = [</div><div class="line">    &#123; <span class="attr">name</span>: <span class="string">'Wes'</span>, <span class="attr">year</span>: <span class="number">1988</span> &#125;,</div><div class="line">    &#123; <span class="attr">name</span>: <span class="string">'Kait'</span>, <span class="attr">year</span>: <span class="number">1986</span> &#125;,</div><div class="line">    &#123; <span class="attr">name</span>: <span class="string">'Irv'</span>, <span class="attr">year</span>: <span class="number">1970</span> &#125;,</div><div class="line">    &#123; <span class="attr">name</span>: <span class="string">'Lux'</span>, <span class="attr">year</span>: <span class="number">2015</span> &#125;</div><div class="line">];<span class="keyword">const</span> comments = [</div><div class="line">    &#123; <span class="attr">text</span>: <span class="string">'Love this!'</span>, <span class="attr">id</span>: <span class="number">523423</span> &#125;,</div><div class="line">    &#123; <span class="attr">text</span>: <span class="string">'Super good'</span>, <span class="attr">id</span>: <span class="number">823423</span> &#125;,</div><div class="line">    &#123; <span class="attr">text</span>: <span class="string">'You are the best'</span>, <span class="attr">id</span>: <span class="number">2039842</span> &#125;,</div><div class="line">    &#123; <span class="attr">text</span>: <span class="string">'Ramen is my fav food ever'</span>, <span class="attr">id</span>: <span class="number">123523</span> &#125;,</div><div class="line">    &#123; <span class="attr">text</span>: <span class="string">'Nice Nice Nice!'</span>, <span class="attr">id</span>: <span class="number">542328</span> &#125;</div><div class="line">];</div></pre></td></tr></table></figure>
+<h2 id="5-some"><a href="#5-some" class="headerlink" title="5.some"></a>5.some</h2><blockquote>
+<p>some()方法测试数组中的某些元素是否通过该提供的函数所进行的测试。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">arr.some(callback[, thisArg]);</div><div class="line"><span class="comment">//  callback  用来测试每个元素的函数</span></div><div class="line"><span class="comment">//  thisArg   执行callback时使用的this值</span></div><div class="line"></div><div class="line"><span class="comment">//some为数组中每一个元素执行一次callback函数直到满足该条件返回true否则返回false</span></div><div class="line"><span class="comment">//callback被调用时有三个参数：元素值ele 元素索引index 被遍历的数组arr</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> youth =<span class="function">(<span class="params">ele,index,arr</span>) =&gt;</span> ele&gt;=<span class="number">16</span> &amp;&amp; ele&lt;=<span class="number">28</span>;</div><div class="line"><span class="keyword">const</span> age =[<span class="number">1</span>,<span class="number">10</span>,<span class="number">2</span>,<span class="number">15</span>,<span class="number">38</span>,<span class="number">11</span>].some(youth); <span class="comment">//age is false</span></div><div class="line"><span class="keyword">const</span> age2 =[<span class="number">11</span>,<span class="number">16</span>,<span class="number">19</span>,<span class="number">99</span>]<span class="comment">//age2 is true</span></div><div class="line"></div><div class="line"><span class="comment">//是否至少有一人年满18周岁？</span></div><div class="line"><span class="keyword">const</span> isAdult = people.some(<span class="function"><span class="params">person</span> =&gt;</span> (<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() -person.year) &gt;= <span class="number">18</span>);</div><div class="line"><span class="built_in">console</span>.log(isAdult);<span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h2 id="6-every"><a href="#6-every" class="headerlink" title="6.every"></a>6.every</h2><blockquote>
+<p>every()方法测试数组的每一个元素是否全部都通过了函数的测试</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">arr.every(callback[, thisArg]);</div><div class="line"><span class="comment">//  callback  用来测试每个元素的函数</span></div><div class="line"><span class="comment">//  thisArg   执行callback时使用的this值</span></div><div class="line"></div><div class="line"><span class="comment">//every方法会对每一个元素执行函数，直到callback遇到一个返回false的元素就返回false否则就是true</span></div><div class="line"><span class="comment">//callback被调用时有三个参数：元素值ele 元素索引index 被遍历的数组arr</span></div><div class="line"></div><div class="line"><span class="comment">//如果为 every 提供一个 thisArg 参数，在该参数为调用 callback 时的 this 值。</span></div><div class="line"><span class="comment">//如果省略该参数，则 callback 被调用时的 this 值，在非严格模式下为全局对象，在严格模式下传入 undefined。</span></div><div class="line"></div><div class="line">是否每一个人都年满<span class="number">18</span>周岁？</div><div class="line"><span class="keyword">const</span> isAdult = people.every(<span class="function"><span class="params">person</span> =&gt;</span> (<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() -person.year) &gt;= <span class="number">18</span>);</div><div class="line"><span class="built_in">console</span>.log(isAdult);<span class="comment">//false</span></div></pre></td></tr></table></figure>
+<h2 id="7-find"><a href="#7-find" class="headerlink" title="7.find"></a>7.find</h2><blockquote>
+<p>find()方法返回数组中满足提供的测试函数的第一个元素的值。没有的话返回undefined。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> old = <span class="function"><span class="params">ele</span> =&gt;</span> ele&gt;=<span class="number">100</span>;</div><div class="line">[<span class="number">12</span>,<span class="number">99</span>,<span class="number">6</span>,<span class="number">118</span>,<span class="number">55</span>,<span class="number">999</span>].find(old);<span class="comment">//118</span></div><div class="line">[<span class="number">12</span>,<span class="number">99</span>,<span class="number">6</span>,<span class="number">118</span>,<span class="number">55</span>,<span class="number">999</span>].findIndex(old);<span class="comment">//3</span></div><div class="line"></div><div class="line"><span class="comment">//indexOf()方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。</span></div><div class="line"><span class="comment">//const a = [2, 9, 7, 8, 9];  a.indexOf(2); // 0  a.indexOf(6); // -1</span></div><div class="line"><span class="comment">//includes() 方法用来判断一个数组是否包含一个指定的值，如果是，酌情返回 true或 false。</span></div><div class="line"><span class="comment">//const b = [1, 2, 3]; b.includes(2); // true  b.includes(4); // false</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> findID =comments.find(<span class="function"><span class="params">comment</span> =&gt;</span> comment.id === <span class="number">888</span>);</div><div class="line"><span class="built_in">console</span>.log(findID);<span class="comment">//undefined</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> hero =[</div><div class="line">     &#123;<span class="attr">name</span>:<span class="string">"德玛"</span>,<span class="attr">age</span>:<span class="number">21</span>&#125;,</div><div class="line">     &#123;<span class="attr">name</span>:<span class="string">"卡特"</span>,<span class="attr">age</span>:<span class="number">22</span>&#125;,</div><div class="line">     &#123;<span class="attr">name</span>:<span class="string">"男刀"</span>,<span class="attr">age</span>:<span class="number">24</span>&#125;,</div><div class="line">     &#123;<span class="attr">name</span>:<span class="string">"女警"</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;</div><div class="line">];</div><div class="line"><span class="keyword">const</span> findDema = <span class="function"><span class="params">dema</span> =&gt;</span> dema.name === <span class="string">"德玛"</span>;</div><div class="line"><span class="built_in">console</span>.log(hero.find(findDema));</div></pre></td></tr></table></figure>
+<p><img src="http://otxurl2qj.bkt.clouddn.com/arr.png" alt="find"></p>
+<h2 id="8-splice"><a href="#8-splice" class="headerlink" title="8.splice"></a>8.splice</h2><blockquote>
+<p>splice()方法通过删除现有元素或添加新元素来更改一个数组的内容。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">arr.splice(start)</div><div class="line">arr.splice(start,deleteCount)</div><div class="line">arr.splice(start,deleteCount,item1,item2,...)</div><div class="line"></div><div class="line"><span class="keyword">let</span> hero =[<span class="string">'德玛'</span>,<span class="string">'卡特'</span>,<span class="string">'劫'</span>,<span class="string">'女警'</span>,<span class="string">'ez'</span>];</div><div class="line"><span class="keyword">let</span> removed = hero.splice(<span class="number">2</span>,<span class="number">0</span>,<span class="string">'光辉'</span>);</div><div class="line"><span class="comment">//removed: [],没有元素被删除</span></div><div class="line"><span class="comment">//hero: ['德玛','卡特','光辉','劫','女警','ez']</span></div><div class="line"></div><div class="line">removed = hero.splice(<span class="number">3</span>,<span class="number">1</span>);</div><div class="line"><span class="comment">//removed: ['劫']</span></div><div class="line"><span class="comment">//hero: ['德玛','卡特','光辉','女警','ez']</span></div><div class="line"></div><div class="line">removed = hero.splice(<span class="number">2</span>, <span class="number">1</span>, <span class="string">'小炮'</span>);</div><div class="line"><span class="comment">//removed: ['光辉']</span></div><div class="line"><span class="comment">//hero: ['德玛','卡特','小炮','女警','ez']</span></div><div class="line"></div><div class="line">removed =hero.splice(<span class="number">0</span>,<span class="number">2</span>,<span class="string">'Ashe'</span>,<span class="string">'Yi'</span>,<span class="string">'Teemo'</span>,<span class="string">'zed'</span>);</div><div class="line"><span class="comment">//removed:['德玛','卡特']</span></div><div class="line"><span class="comment">//hero: ['Ashe','Yi', 'Teemo', 'zed', '小炮', '女警', 'ez']</span></div></pre></td></tr></table></figure>
+<p><img src="http://otxurl2qj.bkt.clouddn.com/1501645896%281%29.png" alt="splice"></p>
+<h2 id="9-slice"><a href="#9-slice" class="headerlink" title="9.slice"></a>9.slice</h2><blockquote>
+<p>slice() 方法返回一个从开始到结束(不包括结束)选择的数组的一部分<strong>浅拷贝</strong>到一个新数组对象。原始数组不会被修改。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = [<span class="string">'Ashe'</span>,<span class="string">'Yi'</span>,<span class="string">'Teemo'</span>,<span class="string">'zed'</span>,<span class="string">'ez'</span>]</div><div class="line"><span class="keyword">let</span> sliced = a.slice(<span class="number">1</span>,<span class="number">3</span>);</div><div class="line">a:[<span class="string">'Ashe'</span>,<span class="string">'Yi'</span>,<span class="string">'Teemo'</span>,<span class="string">'zed'</span>,<span class="string">'ez'</span>]</div><div class="line">sliced:[<span class="string">'Yi'</span>,<span class="string">'Teemo'</span>]</div><div class="line"></div><div class="line">arr.slice()          <span class="comment">//索引从0开始提取原数组中的元素</span></div><div class="line">arr.slice(begin)     <span class="comment">//从第begin开始提取原数组中的元素 slice(-2)表示从倒数第二个元素到最后一个(包含最后一个)。</span></div><div class="line">arr.slice(begin,end) <span class="comment">//提取从begin到end(不包括end)中所有元素</span></div></pre></td></tr></table></figure>
+<p><img src="http://otxurl2qj.bkt.clouddn.com/1501656946%281%29.png" alt="slice"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//slice不修改原始数组，只会浅复制原始数组中元素的一个新数组。</span></div><div class="line"><span class="comment">// * 如果该元素是个对象引用（不是实际的对象）slice会拷贝这个对象引用到新的数组里。两个对象引用都引用了同一个对象。</span></div><div class="line"><span class="comment">//   如果被引用的对象发生改变，则新的还有原来的数组中的这个元素也会发生改变。</span></div><div class="line"><span class="comment">// * 如果该元素是字符串，数字，布尔值，slice会拷贝这些值到新的数组里。在别的数组修改这些值不会影响另一个</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> hero =&#123;<span class="attr">name</span>:<span class="string">'zed'</span>,<span class="attr">age</span>:<span class="string">'22'</span>,<span class="attr">gayF</span>:<span class="string">'Shen'</span>&#125;</div><div class="line"><span class="keyword">let</span> lol = [hero,<span class="string">'lpl'</span>,<span class="string">'lck'</span>,<span class="string">'we'</span>,<span class="string">'omg'</span>]</div><div class="line"><span class="keyword">let</span> nLol =lol.slice(<span class="number">0</span>,<span class="number">3</span>);</div><div class="line">hero.name = <span class="string">'劫'</span>;</div></pre></td></tr></table></figure>
+<p><img src="http://otxurl2qj.bkt.clouddn.com/1501658504%281%29.png" alt="slice"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//类数组（Array-like）</span></div><div class="line">slice方法可以用来将一个类数组转换成一个数组。如下面代码中<span class="built_in">arguments</span>就是一个类数组对象。</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">list</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);<span class="comment">//可以用[].slice.call(arguments)代替</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> list1 = list(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);<span class="comment">//list1:[1,2,3]</span></div></pre></td></tr></table></figure>
+<h2 id="10-concat"><a href="#10-concat" class="headerlink" title="10.concat"></a>10.concat</h2><blockquote>
+<p>concat()方法返回一个新的数组</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">const</span> arr1 = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>];</div><div class="line"><span class="keyword">const</span> arr2 =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">const</span> arr3=arr1.concat(arr2);<span class="comment">//arr3:['a','b','c','d',1,2,3,4];</span></div></pre></td></tr></table></figure>
+<h2 id="最后说一下简单的一些方法"><a href="#最后说一下简单的一些方法" class="headerlink" title="最后说一下简单的一些方法"></a>最后说一下简单的一些方法</h2><h3 id="创建一个数组"><a href="#创建一个数组" class="headerlink" title="创建一个数组"></a>创建一个数组</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> hero = [<span class="string">'zed'</span>,<span class="string">'Ashe'</span>,<span class="string">'ez'</span>]</div></pre></td></tr></table></figure>
+<p>添加元素到数组末尾</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> nHero = hero.push(<span class="string">'Teemo'</span>);</div></pre></td></tr></table></figure>
+<p>删除数组末尾元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> last = hero.pop();</div></pre></td></tr></table></figure>
+<p>删除数组最前面（头部）的元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> first = hero.shift();</div></pre></td></tr></table></figure>
+<p>找到某个元素在数组中的索引</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> index =hero.index(<span class="string">'ez'</span>);</div></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -212,145 +316,173 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zhangss.win/2017/08/12/Array Cardio/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/12/hexo个人博客搭建/" class="archive-article-date">
-  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/12/hexo个人博客搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo个人博客搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/12/hexo个人博客搭建/">Hexo个人博客搭建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Blog搭建</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Git搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-Cardio"><span class="toc-number">1.</span> <span class="toc-text">Array Cardio</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主要目的"><span class="toc-number">1.1.</span> <span class="toc-text">主要目的</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-filter"><span class="toc-number">2.</span> <span class="toc-text">1.filter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-map"><span class="toc-number">3.</span> <span class="toc-text">2.map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-sort"><span class="toc-number">4.</span> <span class="toc-text">3.sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-reduce"><span class="toc-number">5.</span> <span class="toc-text">4.reduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-some"><span class="toc-number">6.</span> <span class="toc-text">5.some</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-every"><span class="toc-number">7.</span> <span class="toc-text">6.every</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-find"><span class="toc-number">8.</span> <span class="toc-text">7.find</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-splice"><span class="toc-number">9.</span> <span class="toc-text">8.splice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-slice"><span class="toc-number">10.</span> <span class="toc-text">9.slice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-concat"><span class="toc-number">11.</span> <span class="toc-text">10.concat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后说一下简单的一些方法"><span class="toc-number">12.</span> <span class="toc-text">最后说一下简单的一些方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个数组"><span class="toc-number">12.1.</span> <span class="toc-text">创建一个数组</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/12/ES6class/" class="archive-article-date">
-  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
-</a>
-        </div>
-    	 
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Array Cardio" data-title="Array Cardio" data-url="http://zhangss.win/2017/08/12/Array Cardio/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/12/ES6class/">ES6的Class</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://zhangss.win/2017/08/12/Array Cardio/", 
+    sourceId: "Array Cardio",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/12/video/" class="archive-article-date">
-  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/12/video/">自定义video</a>
-    </h1>
+  <div id="SOHUCS" sid="Array Cardio" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "true"; 
+var conf = "true"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = '[object Object]'; // required: replace example with your forum shortname
 
-    
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  
 
 
           </div>
@@ -374,8 +506,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
