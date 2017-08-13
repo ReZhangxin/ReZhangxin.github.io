@@ -8,65 +8,125 @@
     <style>
         html{
             font-family: 'Comic Sans MS','Coverage ';font-size: 20px;font-weight: 200;
-            box-sizing: border-box;
-            background:url("http://os8hd0fib.bkt.clouddn.com/home.jpg") no-repeat;
-            background-size: cover;
+            box-sizing: border-box;     
+        }
+        html:before{
+            content:"";width: 100%;height:100%;
+            background: url("http://os8hd0fib.bkt.clouddn.com/home.jpg") no-repeat ;
+            background-size: cover;color:white;position: fixed;z-index: -1;
+            background-color: rgba(0,0,0,.4); 
         }
         body {margin:0;}
+
         *,*:before,*after{box-sizing:inherit;}
         ul,li{list-style: none;padding:0;margin:0;}
         a{text-decoration:none;color:inherit;transition:all 0.5s;}    
-        a:hover{color:white;}
-        
-        aside{
-            min-height: 100vh;width:400px;background:rgba(0,0,0,.4);color:teal;
-            text-align: center;position: absolute;left:-400px;
-            transition: all 0.7s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-       aside.active{left:0; }
-       aside .close{
-            position:absolute;right:-2em;cursor:pointer;top:49%;
-        }
-        .demo-list{
-            display: flex;flex-direction: column;align-items: center;
-        }
-        .demo-list li{
-            margin:20px 0;border:1px solid teal;width:80%;
-            transform:  translateX(-400px) scale(0);
-            transition: all 1.5s ease;
-            border-radius: 5px;height:2em;line-height:2em;transition: all 0.5s;}
-        .demo-list li:hover{border-color: white;}
-        .demo-list li.ac{transform: translateX(0) scale(1); }
+        a:hover{font-size: 21px;}
+        .box{width:400px;border-radius: 10px;display: inline-block;float:left;
+            height:40px;line-height: 40px;text-align: center;
+            box-shadow: 0 0 8px rgba(0,0,0,.7);margin:8px;border:1px solid white;}
+
+    
+       
        
     </style>
 </head>
 <body>
-    <aside>
-        <div class="close"> >> </div>
-        <ul class="demo-list">
-            <li>
-                <a href="demo/scroll.html">图片随屏幕滚动而滑入滑出的效果</a>
-            </li>
-            <li>
-                <a href="demo/css变量.html">CSS变量</a>
-            </li>
-            <li>
-                <a href="demo/自定义视屏播放器.html">自定义视屏播放器</a>
-             </li>
-
-        </ul>
-
-    </aside>
-
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    $(".close").click(function() {
-        $('aside').toggleClass('active');
-        $('.demo-list li').toggleClass('ac');
-    });
-</script>
-
-
+    <div class="box">
+        <a href="demo/scroll.html">图片随屏幕滚动而滑入滑出的效果</a>
+    </div>
+                    
+    <div class="box">
+        <a href="demo/css变量.html">CSS变量</a>
+     </div>
+     
+     <div class="box">
+         <a href="demo/自定义视屏播放器.html">自定义视屏播放器</a>
+     </div>       
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+    <div class="box">
+        
+    </div> 
+          
+            
+             
 
 </body>
 </html>
