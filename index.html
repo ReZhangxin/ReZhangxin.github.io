@@ -192,18 +192,9 @@ var _hmt = _hmt || [];
         <h2 id="数组的浅拷贝"><a href="#数组的浅拷贝" class="headerlink" title="数组的浅拷贝"></a>数组的浅拷贝</h2><blockquote>
 <p>浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)<br>如果其中一个发生变化，这个对象也跟着改变</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a =[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</div><div class="line"><span class="keyword">const</span> b =a.slice();</div><div class="line">b <span class="comment">//['a','b','c']</span></div><div class="line">a[<span class="number">0</span>] = <span class="string">'n'</span>;</div><div class="line">b <span class="comment">//['n','b','c']</span></div><div class="line">a <span class="comment">//['a','b','c']//这里是a而不是n的原因是因为b是另一个空间</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> a2 =[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</div><div class="line"><span class="keyword">const</span> b2 =a2;</div><div class="line">b2[<span class="number">0</span>] = <span class="string">'n'</span>;</div><div class="line">a2<span class="comment">//['n','b','c']</span></div><div class="line">b2<span class="comment">//['n','b','c']//这里b2和a2指向同一个空间</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">const</span> a3 = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,<span class="string">'b'</span>];</div><div class="line"><span class="keyword">const</span> c3 = a.slice();</div><div class="line">a3[<span class="number">0</span>].a = <span class="number">2</span>;</div><div class="line">a3 <span class="comment">//[&#123;a:2&#125;,'b']</span></div><div class="line">c3 <span class="comment">//[&#123;a:2&#125;,'b']//这里a3和c3虽然不是同一个空间但是里面的对象却指向同一个</span></div></pre></td></tr></table></figure>
-<p><img src="http://otxurl2qj.bkt.clouddn.com/coby1.jpg" alt="浅拷贝和深拷贝"></p>
-<h3 id="数组的深拷贝"><a href="#数组的深拷贝" class="headerlink" title="数组的深拷贝"></a>数组的深拷贝</h3><blockquote>
-<p>与浅拷贝相反 深拷贝完全拷贝到另一个空间里<br>修改其中一个对象不会影响另一个对象</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a4 = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,<span class="string">'b'</span>];</div><div class="line"><span class="keyword">const</span> b4 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(a4));</div><div class="line"></div><div class="line"><span class="keyword">const</span> a5 =[&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,<span class="string">'b'</span>];</div><div class="line"><span class="keyword">const</span> b5 = [].concat(a5);</div><div class="line"></div><div class="line"><span class="keyword">const</span> a6 =&#123;</div><div class="line">	a:<span class="number">1</span>,</div><div class="line">	b:<span class="number">2</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> b7 = <span class="built_in">Object</span>.assign(&#123;&#125;,a6,&#123;</div><div class="line">	a:<span class="number">666</span>,</div><div class="line">	b:<span class="number">888</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">//b7和b6是的深拷贝</span></div><div class="line"></div><div class="line"><span class="comment">//Object.assign的三个参数中，第一个参数属于初始值，</span></div><div class="line"><span class="comment">//它最终的值是第二个和第三个参数的并集，如果第二个、</span></div><div class="line"><span class="comment">//第三个参数有相同的属性，那个第三个参数会覆盖第二个参数里面的值。</span></div></pre></td></tr></table></figure>
-<p><img src="http://otxurl2qj.bkt.clouddn.com/coby2.jpg" alt="数组的深拷贝"></p>
-<h2 id="数组的扁平化"><a href="#数组的扁平化" class="headerlink" title="数组的扁平化"></a>数组的扁平化</h2><blockquote>
-<p>数组的扁平化，就是将一个嵌套多层的数组 array 转换为只有一层的数组。<br> <code>[1,[2,[3,4]]] ==&gt;[1,2,3,4]</code>这就是数组的扁平化</p>
-</blockquote>
-<p>1、如果数组都是数字可以用toString()方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]].toString() <span class="comment">// "1,2,3,4"</span></div><div class="line"></div><div class="line"><span class="comment">//split() 方法用于把一个字符串分割成字符串数组。</span></div><div class="line"><span class="comment">//String.split() 执行的操作与 Array.join 执行的操作是相反的。</span></div><div class="line"><span class="comment">//"2:3:4:5".split(":")     //将返回["2", "3", "4", "5"]</span></div><div class="line"><span class="comment">//"|a|b|c".split("|")	      //将返回["", "a", "b", "c"]</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">one</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.toString().split(<span class="string">','</span>).map(<span class="function"><span class="params">item</span> =&gt;</span> +item);</div><div class="line">&#125;</div><div class="line">one(arr);<span class="comment">//[1, 2, 3, 4]</span></div></pre></td></tr></table></figure></p>
-
+        
+          <a class="article-more-a" href="/2017/08/13/浅拷贝和深拷贝/#more">more >></a>
+        
       
 
       
@@ -216,7 +207,89 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/13/浅拷贝和深拷贝/">快看全文吧~~ >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6class" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/12/ES6class/">ES6的Class</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/12/ES6class/" class="archive-article-date">
+  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="继承与原型链"><a href="#继承与原型链" class="headerlink" title="继承与原型链"></a>继承与原型链</h2><h3 id="使用-Object-create-创建对象"><a href="#使用-Object-create-创建对象" class="headerlink" title="使用 Object.create 创建对象"></a>使用 Object.create 创建对象</h3><blockquote>
+<p><code>ECMAScript5</code>引入新方法：<code>Object.create()</code>可以调用这个方法来创建一个新的对象。新对象的原型就是调用<code>create</code>方法时传入的第一个参数</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/08/12/ES6class/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -230,7 +303,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/13/浅拷贝和深拷贝/">快看全文吧~~ >></a>
+          <a class="article-more-a" href="/2017/08/12/ES6class/">快看全文吧~~ >></a>
         </p>
       
 
@@ -300,11 +373,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
         		</li>
       		
 		</ul>
@@ -315,88 +388,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/08/12/Array Cardio/">快看全文吧~~ >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6class" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/12/ES6class/">ES6的Class</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/12/ES6class/" class="archive-article-date">
-  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="继承与原型链"><a href="#继承与原型链" class="headerlink" title="继承与原型链"></a>继承与原型链</h2><h3 id="使用-Object-create-创建对象"><a href="#使用-Object-create-创建对象" class="headerlink" title="使用 Object.create 创建对象"></a>使用 Object.create 创建对象</h3><blockquote>
-<p><code>ECMAScript5</code>引入新方法：<code>Object.create()</code>可以调用这个方法来创建一个新的对象。新对象的原型就是调用<code>create</code>方法时传入的第一个参数</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/08/12/ES6class/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/12/ES6class/">快看全文吧~~ >></a>
         </p>
       
 
@@ -587,94 +578,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-video" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/12/video/">自定义video</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/12/video/" class="archive-article-date">
-  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Node-textContent"><a href="#Node-textContent" class="headerlink" title="Node.textContent"></a>Node.textContent</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p> <code>const icon = this.paused ? &#39;►&#39; : &#39;❚ ❚&#39;;</code><br> <code>toggle.textContent = icon;</code></p>
-</blockquote>
-<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><blockquote>
-<ul>
-<li>Node.textContent属性表示一个节点及其后代的文本内容</li>
-<li><code>document.documentElement.textContent</code>返回整个文档文本以及<br> CDATA数据(不应由 XML 解析器进行解析的文本数据)</li>
-</ul>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/08/12/video/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/12/video/">快看全文吧~~ >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-javascript01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -729,6 +632,94 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/08/12/javascript01/">快看全文吧~~ >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-video" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/12/video/">自定义video</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/12/video/" class="archive-article-date">
+  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Node-textContent"><a href="#Node-textContent" class="headerlink" title="Node.textContent"></a>Node.textContent</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p> <code>const icon = this.paused ? &#39;►&#39; : &#39;❚ ❚&#39;;</code><br> <code>toggle.textContent = icon;</code></p>
+</blockquote>
+<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><blockquote>
+<ul>
+<li>Node.textContent属性表示一个节点及其后代的文本内容</li>
+<li><code>document.documentElement.textContent</code>返回整个文档文本以及<br> CDATA数据(不应由 XML 解析器进行解析的文本数据)</li>
+</ul>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/08/12/video/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/12/video/">快看全文吧~~ >></a>
         </p>
       
 
@@ -848,7 +839,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -856,7 +847,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">

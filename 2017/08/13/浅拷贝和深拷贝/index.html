@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://zhangss.win">
   <title>浅拷贝，深拷贝，扁平化 | ReZhangxin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数组的浅拷贝 浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)如果其中一个发生变化，这个对象也跟着改变  12345678910111213141516171819const a =[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];const b =a.slice();b //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]a[0] = &apos;n&apos;;b //[&apos;n&apos;,&apos;b&apos;,&apos;c&apos;]a //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]//这">
-<meta name="keywords" content="Array,JavaScript">
+  <meta name="description" content="数组的浅拷贝 浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)如果其中一个发生变化，这个对象也跟着改变">
+<meta name="keywords" content="JavaScript,Array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅拷贝，深拷贝，扁平化">
 <meta property="og:url" content="http://zhangss.win/2017/08/13/浅拷贝和深拷贝/index.html">
 <meta property="og:site_name" content="ReZhangxin&#39;s Blog">
-<meta property="og:description" content="数组的浅拷贝 浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)如果其中一个发生变化，这个对象也跟着改变  12345678910111213141516171819const a =[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];const b =a.slice();b //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]a[0] = &apos;n&apos;;b //[&apos;n&apos;,&apos;b&apos;,&apos;c&apos;]a //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]//这">
+<meta property="og:description" content="数组的浅拷贝 浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)如果其中一个发生变化，这个对象也跟着改变">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/coby1.jpg">
 <meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/coby2.jpg">
-<meta property="og:updated_time" content="2017-08-13T14:12:51.738Z">
+<meta property="og:updated_time" content="2017-08-13T14:14:46.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅拷贝，深拷贝，扁平化">
-<meta name="twitter:description" content="数组的浅拷贝 浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)如果其中一个发生变化，这个对象也跟着改变  12345678910111213141516171819const a =[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];const b =a.slice();b //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]a[0] = &apos;n&apos;;b //[&apos;n&apos;,&apos;b&apos;,&apos;c&apos;]a //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]//这">
+<meta name="twitter:description" content="数组的浅拷贝 浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)如果其中一个发生变化，这个对象也跟着改变">
 <meta name="twitter:image" content="http://otxurl2qj.bkt.clouddn.com/coby1.jpg">
   
   
@@ -195,6 +195,7 @@ var _hmt = _hmt || [];
         <h2 id="数组的浅拷贝"><a href="#数组的浅拷贝" class="headerlink" title="数组的浅拷贝"></a>数组的浅拷贝</h2><blockquote>
 <p>浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)<br>如果其中一个发生变化，这个对象也跟着改变</p>
 </blockquote>
+<a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a =[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</div><div class="line"><span class="keyword">const</span> b =a.slice();</div><div class="line">b <span class="comment">//['a','b','c']</span></div><div class="line">a[<span class="number">0</span>] = <span class="string">'n'</span>;</div><div class="line">b <span class="comment">//['n','b','c']</span></div><div class="line">a <span class="comment">//['a','b','c']//这里是a而不是n的原因是因为b是另一个空间</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> a2 =[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</div><div class="line"><span class="keyword">const</span> b2 =a2;</div><div class="line">b2[<span class="number">0</span>] = <span class="string">'n'</span>;</div><div class="line">a2<span class="comment">//['n','b','c']</span></div><div class="line">b2<span class="comment">//['n','b','c']//这里b2和a2指向同一个空间</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">const</span> a3 = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,<span class="string">'b'</span>];</div><div class="line"><span class="keyword">const</span> c3 = a.slice();</div><div class="line">a3[<span class="number">0</span>].a = <span class="number">2</span>;</div><div class="line">a3 <span class="comment">//[&#123;a:2&#125;,'b']</span></div><div class="line">c3 <span class="comment">//[&#123;a:2&#125;,'b']//这里a3和c3虽然不是同一个空间但是里面的对象却指向同一个</span></div></pre></td></tr></table></figure>
 <p><img src="http://otxurl2qj.bkt.clouddn.com/coby1.jpg" alt="浅拷贝和深拷贝"></p>
 <h3 id="数组的深拷贝"><a href="#数组的深拷贝" class="headerlink" title="数组的深拷贝"></a>数组的深拷贝</h3><blockquote>
@@ -250,11 +251,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
         		</li>
       		
 		</ul>
@@ -325,8 +326,8 @@ var _hmt = _hmt || [];
 <nav id="article-nav">
   
   
-    <a href="/2017/08/12/Array Cardio/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Array Cardio</div>
+    <a href="/2017/08/12/ES6class/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ES6的Class</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -516,7 +517,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,7 +525,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
