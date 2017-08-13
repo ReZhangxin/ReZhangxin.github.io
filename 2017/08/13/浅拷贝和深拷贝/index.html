@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zhangss.win">
-  <title>自定义video | ReZhangxin&#39;s Blog</title>
+  <title>浅拷贝，深拷贝，扁平化 | ReZhangxin&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Node.textContent语法  const icon = this.paused ? &amp;#39;►&amp;#39; : &amp;#39;❚ ❚&amp;#39;; toggle.textContent = icon;  描述  Node.textContent属性表示一个节点及其后代的文本内容 document.documentElement.textContent返回整个文档文本以及 CDATA数据(不应由">
-<meta name="keywords" content="JavaScript,ES6">
+  <meta name="description" content="数组的浅拷贝 浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)如果其中一个发生变化，这个对象也跟着改变  12345678910111213141516171819const a =[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];const b =a.slice();b //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]a[0] = &apos;n&apos;;b //[&apos;n&apos;,&apos;b&apos;,&apos;c&apos;]a //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]//这">
+<meta name="keywords" content="-Array -JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自定义video">
-<meta property="og:url" content="http://zhangss.win/2017/08/12/video/index.html">
+<meta property="og:title" content="浅拷贝，深拷贝，扁平化">
+<meta property="og:url" content="http://zhangss.win/2017/08/13/浅拷贝和深拷贝/index.html">
 <meta property="og:site_name" content="ReZhangxin&#39;s Blog">
-<meta property="og:description" content="Node.textContent语法  const icon = this.paused ? &amp;#39;►&amp;#39; : &amp;#39;❚ ❚&amp;#39;; toggle.textContent = icon;  描述  Node.textContent属性表示一个节点及其后代的文本内容 document.documentElement.textContent返回整个文档文本以及 CDATA数据(不应由">
+<meta property="og:description" content="数组的浅拷贝 浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)如果其中一个发生变化，这个对象也跟着改变  12345678910111213141516171819const a =[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];const b =a.slice();b //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]a[0] = &apos;n&apos;;b //[&apos;n&apos;,&apos;b&apos;,&apos;c&apos;]a //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]//这">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-12T05:30:18.471Z">
+<meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/coby1.jpg">
+<meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/coby2.jpg">
+<meta property="og:updated_time" content="2017-08-13T14:11:09.036Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自定义video">
-<meta name="twitter:description" content="Node.textContent语法  const icon = this.paused ? &amp;#39;►&amp;#39; : &amp;#39;❚ ❚&amp;#39;; toggle.textContent = icon;  描述  Node.textContent属性表示一个节点及其后代的文本内容 document.documentElement.textContent返回整个文档文本以及 CDATA数据(不应由">
+<meta name="twitter:title" content="浅拷贝，深拷贝，扁平化">
+<meta name="twitter:description" content="数组的浅拷贝 浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)如果其中一个发生变化，这个对象也跟着改变  12345678910111213141516171819const a =[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];const b =a.slice();b //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]a[0] = &apos;n&apos;;b //[&apos;n&apos;,&apos;b&apos;,&apos;c&apos;]a //[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]//这">
+<meta name="twitter:image" content="http://otxurl2qj.bkt.clouddn.com/coby1.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -169,52 +172,41 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-video" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-浅拷贝和深拷贝" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      自定义video
+      浅拷贝，深拷贝，扁平化
     </h1>
   
 
         
-        <a href="/2017/08/12/video/" class="archive-article-date">
-  	<time datetime="2017-08-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
+        <a href="/2017/08/13/浅拷贝和深拷贝/" class="archive-article-date">
+  	<time datetime="2017-08-13T10:21:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Node-textContent"><a href="#Node-textContent" class="headerlink" title="Node.textContent"></a>Node.textContent</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p> <code>const icon = this.paused ? &#39;►&#39; : &#39;❚ ❚&#39;;</code><br> <code>toggle.textContent = icon;</code></p>
+        <h2 id="数组的浅拷贝"><a href="#数组的浅拷贝" class="headerlink" title="数组的浅拷贝"></a>数组的浅拷贝</h2><blockquote>
+<p>浅拷贝的是对象的指针，而不是对象的本身(这里的对象是Object类型)<br>如果其中一个发生变化，这个对象也跟着改变</p>
 </blockquote>
-<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><blockquote>
-<ul>
-<li>Node.textContent属性表示一个节点及其后代的文本内容</li>
-<li><code>document.documentElement.textContent</code>返回整个文档文本以及<br> CDATA数据(不应由 XML 解析器进行解析的文本数据)</li>
-</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a =[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</div><div class="line"><span class="keyword">const</span> b =a.slice();</div><div class="line">b <span class="comment">//['a','b','c']</span></div><div class="line">a[<span class="number">0</span>] = <span class="string">'n'</span>;</div><div class="line">b <span class="comment">//['n','b','c']</span></div><div class="line">a <span class="comment">//['a','b','c']//这里是a而不是n的原因是因为b是另一个空间</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> a2 =[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</div><div class="line"><span class="keyword">const</span> b2 =a2;</div><div class="line">b2[<span class="number">0</span>] = <span class="string">'n'</span>;</div><div class="line">a2<span class="comment">//['n','b','c']</span></div><div class="line">b2<span class="comment">//['n','b','c']//这里b2和a2指向同一个空间</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">const</span> a3 = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,<span class="string">'b'</span>];</div><div class="line"><span class="keyword">const</span> c3 = a.slice();</div><div class="line">a3[<span class="number">0</span>].a = <span class="number">2</span>;</div><div class="line">a3 <span class="comment">//[&#123;a:2&#125;,'b']</span></div><div class="line">c3 <span class="comment">//[&#123;a:2&#125;,'b']//这里a3和c3虽然不是同一个空间但是里面的对象却指向同一个</span></div></pre></td></tr></table></figure>
+<p><img src="http://otxurl2qj.bkt.clouddn.com/coby1.jpg" alt="浅拷贝和深拷贝"></p>
+<h3 id="数组的深拷贝"><a href="#数组的深拷贝" class="headerlink" title="数组的深拷贝"></a>数组的深拷贝</h3><blockquote>
+<p>与浅拷贝相反 深拷贝完全拷贝到另一个空间里<br>修改其中一个对象不会影响另一个对象</p>
 </blockquote>
-<a id="more"></a>
-<h3 id="与innerText的区别"><a href="#与innerText的区别" class="headerlink" title="与innerText的区别"></a>与innerText的区别</h3><blockquote>
-<ul>
-<li>textContent 会获取所有元素的内容，包括 <script> 和 <style> 元素，然而 innerText 不会。</li>
-<li>innerText意识到样式，并且不会返回隐藏元素的文本，而textContent会。</li>
-<li>由于 innerText 受 CSS 样式的影响，它会触发重排（reflow），但textContent 不会。</li>
-</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a4 = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,<span class="string">'b'</span>];</div><div class="line"><span class="keyword">const</span> b4 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(a4));</div><div class="line"></div><div class="line"><span class="keyword">const</span> a5 =[&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,<span class="string">'b'</span>];</div><div class="line"><span class="keyword">const</span> b5 = [].concat(a5);</div><div class="line"></div><div class="line"><span class="keyword">const</span> a6 =&#123;</div><div class="line">	a:<span class="number">1</span>,</div><div class="line">	b:<span class="number">2</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> b7 = <span class="built_in">Object</span>.assign(&#123;&#125;,a6,&#123;</div><div class="line">	a:<span class="number">666</span>,</div><div class="line">	b:<span class="number">888</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">//b7和b6是的深拷贝</span></div><div class="line"></div><div class="line"><span class="comment">//Object.assign的三个参数中，第一个参数属于初始值，</span></div><div class="line"><span class="comment">//它最终的值是第二个和第三个参数的并集，如果第二个、</span></div><div class="line"><span class="comment">//第三个参数有相同的属性，那个第三个参数会覆盖第二个参数里面的值。</span></div></pre></td></tr></table></figure>
+<p><img src="http://otxurl2qj.bkt.clouddn.com/coby2.jpg" alt="数组的深拷贝"></p>
+<h2 id="数组的扁平化"><a href="#数组的扁平化" class="headerlink" title="数组的扁平化"></a>数组的扁平化</h2><blockquote>
+<p>数组的扁平化，就是将一个嵌套多层的数组 array 转换为只有一层的数组。<br> <code>[1,[2,[3,4]]] ==&gt;[1,2,3,4]</code>这就是数组的扁平化</p>
 </blockquote>
-<h3 id="与innerHTML的区别"><a href="#与innerHTML的区别" class="headerlink" title="与innerHTML的区别"></a>与innerHTML的区别</h3><blockquote>
-<ul>
-<li>innerHTML 返回 HTML 文本。</li>
-<li>为了在元素中检索或写入文本，人们使用innerHTML。<br> textContent通常具有更好的性能，因为文本不会被解析为HTML。<br> 此外，使用textContent可以防止 XSS 攻击。</li>
-</ul>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">togglePlay</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">//点击切换播放 和暂停视频</span></div><div class="line">		<span class="comment">//当判断当前的视频播放状态，播放时变为暂停状态、暂停时变为播放状态</span></div><div class="line">		<span class="comment">//分别调用video.play() 和 video.pause()方法在此使用video[play]()和video[pause]()方法</span></div><div class="line">		<span class="comment">//使用中括号能够动态的传变量过去，使用 . 则不能  </span></div><div class="line">	  <span class="keyword">const</span> method = video.paused ? <span class="string">'play'</span> : <span class="string">'pause'</span>;</div><div class="line">	  video[method]();</div><div class="line">	&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateButton</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	  <span class="keyword">const</span> icon = <span class="keyword">this</span>.paused ? <span class="string">'►'</span> : <span class="string">'❚ ❚'</span>;</div><div class="line">	  <span class="comment">//Node.textContent属性表示一个节点及其后代的文本内容</span></div><div class="line">	  toggle.textContent = icon;</div><div class="line">	&#125;</div><div class="line">video.addEventListener(<span class="string">'click'</span>, togglePlay);</div><div class="line">video.addEventListener(<span class="string">'play'</span>, updateButton);</div><div class="line">video.addEventListener(<span class="string">'pause'</span>, updateButton);</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">const</span> player =<span class="built_in">document</span>.querySelector(<span class="string">'.video'</span>);</div><div class="line"><span class="keyword">const</span> video = player.querySelector(<span class="string">'.viewer'</span>);</div><div class="line"><span class="keyword">const</span> progress = player.querySelector(<span class="string">'.progress'</span>);</div><div class="line"><span class="keyword">const</span> progressBar = player.querySelector(<span class="string">'.progress_point'</span>);</div><div class="line"><span class="keyword">const</span> toggle = player.querySelector(<span class="string">'.toggle'</span>);</div><div class="line"></div><div class="line"><span class="comment">//&lt;button data-skip="-10" class="player__button"&gt;« 10s&lt;/button&gt;</span></div><div class="line"><span class="comment">//&lt;button data-skip="25" class="player__button"&gt;25s »&lt;/button&gt;</span></div><div class="line"><span class="comment">//通过html5新定义标签data-* 属性 `data-skip` 可以通过dataset.skip访问</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> skipButtons = player.querySelectorAll(<span class="string">'[data-skip]'</span>);</div><div class="line"><span class="keyword">const</span> ranges = player.querySelectorAll(<span class="string">'.player_slider'</span>);</div><div class="line"></div><div class="line"><span class="comment">//点击切换播放 和暂停视频============================</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">togglePlay</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="comment">//当判断当前的视频播放状态，播放时变为暂停状态、暂停时变为播放状态</span></div><div class="line">	<span class="comment">//分别调用video.play() 和 video.pause()方法在此使用video[play]()和video[pause]()方法</span></div><div class="line">	<span class="comment">//使用中括号能够动态的传变量过去，使用 . 则不能 </span></div><div class="line">	<span class="comment">// const method = video.paused ? play:pause;</span></div><div class="line">	<span class="comment">// 方括号里面是字符串类型所以不能这么写const method = video.paused ? play:pause;</span></div><div class="line">	<span class="comment">// 不然会找不到play </span></div><div class="line">  <span class="keyword">const</span> method = video.paused ? <span class="string">'play'</span> : <span class="string">'pause'</span>;</div><div class="line">  video[method]();</div><div class="line">&#125;</div><div class="line">video.addEventListener(<span class="string">'click'</span>, togglePlay);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//播放按钮状态的改变=================================</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateButton</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> icon = <span class="keyword">this</span>.paused ? <span class="string">'►'</span> : <span class="string">'❚ ❚'</span>;</div><div class="line">  <span class="comment">//Node.textContent属性表示一个节点及其后代的文本内容</span></div><div class="line">  toggle.textContent = icon;</div><div class="line">&#125;</div><div class="line"><span class="comment">//video.addEventListener('play', updateButton);</span></div><div class="line"><span class="comment">//video.addEventListener('pause', updateButton);</span></div><div class="line"></div><div class="line">video.addEventListener(<span class="string">'click'</span>,updateButton);</div><div class="line">toggle.addEventListener(<span class="string">'click'</span>, togglePlay);</div><div class="line"></div><div class="line"><span class="comment">//快进快退==========================================</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">skip</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="comment">//currentTime:视频当前播放时间 </span></div><div class="line">	<span class="comment">//给button设置data-skip属性 就可以通过dataset.skip获取到该属性的值也就是this.dataset.skip</span></div><div class="line">	<span class="comment">//但是这个值是字符串类型 需要把它转化为浮点型则需要parseFloat()将这个转化为浮点型</span></div><div class="line">	<span class="comment">//分别将时间加减当前视频的播放事件就可以做到快进快退。</span></div><div class="line">	<span class="comment">/*</span></div><div class="line"><span class="comment">	以下只能控制一个因为快进快退有两个 所以要遍历这两个元素</span></div><div class="line"><span class="comment">	function skips()&#123;</span></div><div class="line"><span class="comment">	video.currentTime += parseFloat(skipButtons[1].dataset.skip);</span></div><div class="line"><span class="comment">	console.log(video.currentTime);</span></div><div class="line"><span class="comment">	&#125;</span></div><div class="line"><span class="comment">	skipButtons[1].addEventListener('click',skips);</span></div><div class="line"><span class="comment">	*/</span></div><div class="line">	<span class="comment">//video.currentTime += parseFloat(skipButtons.dataset.skip);</span></div><div class="line">	<span class="comment">//为什么上面代码运行的话就会报错？？1.此时skipButtons是数组skipButtons[0]可以</span></div><div class="line">	<span class="comment">//但是只能对一个button有效，我们需要两个点击都要效果点击这个有效点击那个也有效</span></div><div class="line">	<span class="comment">//这样的话就得用便利的this 这种this可以绑定我们所要点击的那个元素this的指向是调用</span></div><div class="line">	<span class="comment">//它的对象此时是skipButtons调用的所以这里面的this就是当时点击的那个skipButtons</span></div><div class="line">	<span class="comment">//this 就是这么厉害 在这里我学到了如果一个父元素有几百个子元素，我们要对这几百个子元素</span></div><div class="line">	<span class="comment">//任意一个进行点击我们就不必为每一个子元素都添加click只需要对这几百个子元素进行一一遍历</span></div><div class="line">	<span class="comment">//添加一个click的监听然后通过this来绑定你当前所点击的那个元素</span></div><div class="line"> video.currentTime += <span class="built_in">parseFloat</span>(<span class="keyword">this</span>.dataset.skip);</div><div class="line">&#125;</div><div class="line">skipButtons.forEach(<span class="function"><span class="params">button</span> =&gt;</span> button.addEventListener(<span class="string">'click'</span>, skip));</div><div class="line"><span class="comment">//音量大小和播放速度控制的函数</span></div><div class="line"><span class="comment">//分别给每一个input[type=range]设置name属性，代表该范围所表示的内容，同时也是需要控制的方法名</span></div><div class="line"><span class="comment">//所以要通过设置video[e.target.name]=e.target.value;就可以分别改变视频的音量和播放速度</span></div><div class="line"><span class="comment">//e.target就是这两个input元素也就是this</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleRangeUpdate</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  video[<span class="keyword">this</span>.name] = <span class="keyword">this</span>.value;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">ranges.forEach(<span class="function"><span class="params">range</span> =&gt;</span> range.addEventListener(<span class="string">'change'</span>, handleRangeUpdate));</div><div class="line">ranges.forEach(<span class="function"><span class="params">range</span> =&gt;</span> range.addEventListener(<span class="string">'mousemove'</span>, handleRangeUpdate));</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//进度条显示==========================================</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleProgress</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="comment">//通过视频当前播放时间除以视频的总时长*100，就是当前视频播放的百分比，</span></div><div class="line">	<span class="comment">//将改该值使用模板字符串的方式传给flexBasis样式中就可以啦，在css中该样式名为flex-basis，</span></div><div class="line">	<span class="comment">//但是js中需要多单词的CSS属性不能用连字符连接flex-basis写为flexBasis</span></div><div class="line">  <span class="keyword">const</span> percent = (video.currentTime / video.duration) * <span class="number">100</span>;</div><div class="line">  progressBar.style.flexBasis = <span class="string">`<span class="subst">$&#123;percent&#125;</span>%`</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//timeupdate 事件在音频/视频（audio/video）的播放位置发生改变时触发。</span></div><div class="line">video.addEventListener(<span class="string">'timeupdate'</span>, handleProgress);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//拖拽进度条==========================================</span></div><div class="line"><span class="comment">//我们要点击进度条时调整播放进度，我们改变进度，或者说宽度就需要得到鼠标点击的位置</span></div><div class="line"><span class="comment">//这个可以通过事件对象的offsetX属性来找到，该属性代表鼠标点击的位置相对于该元素的水平偏移</span></div><div class="line"><span class="comment">//得到偏移后计算出该位置的百分比</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">scrub</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;</div><div class="line">  video.currentTime = scrubTime;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> mousedown = <span class="literal">false</span>;</div><div class="line">progress.addEventListener(<span class="string">'click'</span>, scrub);</div><div class="line">progress.addEventListener(<span class="string">'mousemove'</span>, (e) =&gt; mousedown &amp;&amp; scrub(e));</div><div class="line">progress.addEventListener(<span class="string">'mousedown'</span>, () =&gt; mousedown = <span class="literal">true</span>);</div><div class="line">progress.addEventListener(<span class="string">'mouseup'</span>, () =&gt; mousedown = <span class="literal">false</span>);</div></pre></td></tr></table></figure>
-</script></li></ul></blockquote>
+<p>1、如果数组都是数字可以用toString()方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]].toString() <span class="comment">// "1,2,3,4"</span></div><div class="line"></div><div class="line"><span class="comment">//split() 方法用于把一个字符串分割成字符串数组。</span></div><div class="line"><span class="comment">//String.split() 执行的操作与 Array.join 执行的操作是相反的。</span></div><div class="line"><span class="comment">//"2:3:4:5".split(":")     //将返回["2", "3", "4", "5"]</span></div><div class="line"><span class="comment">//"|a|b|c".split("|")	      //将返回["", "a", "b", "c"]</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">one</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.toString().split(<span class="string">','</span>).map(<span class="function"><span class="params">item</span> =&gt;</span> +item);</div><div class="line">&#125;</div><div class="line">one(arr);<span class="comment">//[1, 2, 3, 4]</span></div></pre></td></tr></table></figure></p>
+
       
 
       
@@ -258,11 +250,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-Array -JavaScript</a>
         		</li>
       		
 		</ul>
@@ -318,7 +306,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://zhangss.win/2017/08/12/video/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zhangss.win/2017/08/13/浅拷贝和深拷贝/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -332,18 +320,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/08/12/hexo个人博客搭建/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hexo个人博客搭建
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/12/ES6class/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ES6的Class</div>
+    <a href="/2017/08/12/Array Cardio/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Array Cardio</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -370,7 +349,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-textContent"><span class="toc-number">1.</span> <span class="toc-text">Node.textContent</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-number">1.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#描述"><span class="toc-number">1.2.</span> <span class="toc-text">描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#与innerText的区别"><span class="toc-number">1.3.</span> <span class="toc-text">与innerText的区别</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组的浅拷贝"><span class="toc-number">1.</span> <span class="toc-text">数组的浅拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的深拷贝"><span class="toc-number">1.1.</span> <span class="toc-text">数组的深拷贝</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组的扁平化"><span class="toc-number">2.</span> <span class="toc-text">数组的扁平化</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -384,7 +363,7 @@ var _hmt = _hmt || [];
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="video" data-title="自定义video" data-url="http://zhangss.win/2017/08/12/video/"></div>
+	<div class="ds-thread" data-thread-key="浅拷贝和深拷贝" data-title="浅拷贝，深拷贝，扁平化" data-url="http://zhangss.win/2017/08/13/浅拷贝和深拷贝/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -407,8 +386,8 @@ var _hmt = _hmt || [];
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://zhangss.win/2017/08/12/video/", 
-    sourceId: "video",
+    url: "http://zhangss.win/2017/08/13/浅拷贝和深拷贝/", 
+    sourceId: "浅拷贝和深拷贝",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -417,7 +396,7 @@ var _hmt = _hmt || [];
   
 
   
-  <div id="SOHUCS" sid="video" ></div> 
+  <div id="SOHUCS" sid="浅拷贝和深拷贝" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "true"; 
