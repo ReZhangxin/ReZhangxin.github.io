@@ -16,7 +16,9 @@
         }
         .hl{color:var(--base);}
         
-        body{text-align:center;background:teal;color:white;font-family:"sans-serif","helvetica neue";
+        body{text-align:center;background:url("http://ouch71mj2.bkt.clouddn.com/dog.jpg");
+            min-height: : 100vh;background-size: cover;
+            color:white;font-family:"sans-serif","helvetica neue";
             font-weight:100;font-size:30px;
         }
         a{text-decoration: none;color:var(--base);transition: all 1s;}
@@ -25,12 +27,15 @@
         input{width:100px;}
         .result{display:flex;flex-direction: row;justify-content:center;color:var(--base);}
         .showText{margin:0 25px 50px 25px;}
+
+       
     </style>
 </head>
 <body>
 <div>
 <div id="home" style="position: fixed;left:0;top:0;color:aqua;cursor:pointer;">
 <a href="../index.html">Home</a></div>
+
     <h2>Update CSS Variables with <span class="hl">JS</span></h2>
     <div class="controls">
         <label for="spacing">Spacing:</label>
