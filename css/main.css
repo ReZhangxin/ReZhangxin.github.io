@@ -1928,7 +1928,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ac470b;
+  background: #ff28ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2795,6 +2795,11 @@ embed {
 }
 .posts-expand .post-title {
   padding-top: 20px;
+}
+.post-header .post-title-link span {
+  text-align: center;
+  position: relative;
+  left: 40%;
 }
 .posts-expand .post-meta {
   margin: 3px 0 20px 0;
