@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/1501645896%281%29.png">
 <meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/1501656946%281%29.png">
 <meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/1501658504%281%29.png">
-<meta property="og:updated_time" content="2017-08-13T09:45:34.708Z">
+<meta property="og:updated_time" content="2017-08-18T13:21:14.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Array Cardio">
 <meta name="twitter:description" content="Array Cardio主要目的 熟悉Array的一些方法 filter map sort reduce some every find splice slice concat  在详细介绍之前，很有必要对ECMAScript5中的数组方法做一个概述。首先，大多数方法的第一个参数接收一个函数，并且对数组的每一个元素（或一些元素）调用一次该函数如果是稀疏数组，对不存在的元素不调用传递的函数。在大多数">
@@ -240,6 +240,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-music">
+          <a href="/music/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            音乐
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -278,7 +288,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张鑫">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/blog.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -312,6 +322,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -417,6 +449,35 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>谢谢你请我吃糖果</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.jpg" alt="张鑫 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="张鑫 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -439,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/12/hexo个人博客搭建/" rel="next" title="Hexo个人博客搭建">
-                <i class="fa fa-chevron-left"></i> Hexo个人博客搭建
+              <a href="/2017/08/12/ES6class/" rel="next" title="ES6的Class">
+                <i class="fa fa-chevron-left"></i> ES6的Class
               </a>
             
           </div>
@@ -516,7 +577,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/blog.jpg"
                alt="张鑫" />
           <p class="site-author-name" itemprop="name">张鑫</p>
            
@@ -535,15 +596,24 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
@@ -683,6 +753,8 @@
   
 
 
+  
+
 
 
 
@@ -710,6 +782,9 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   

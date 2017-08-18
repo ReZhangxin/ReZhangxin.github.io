@@ -105,7 +105,7 @@
 <meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/185/=Dimensions-client.png">
 <meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png">
 <meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/842/=ScrollTop.png">
-<meta property="og:updated_time" content="2017-08-12T10:59:41.540Z">
+<meta property="og:updated_time" content="2017-08-18T13:21:51.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="获取浏览器的位置">
 <meta name="twitter:description" content="关于浏览器各种位置的获取 clientWidth offsetWidth scrollTop innerHeight  1234const a = window.innerHeight; //获得浏览器窗口的内容区域的高度,包含水平滚动条(如果有的话).const b = window.innerWidth;  //获得浏览器窗口的内容区域的宽度,包含垂直滚动条(如果有的话).const loc">
@@ -238,6 +238,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-music">
+          <a href="/music/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            音乐
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -276,7 +286,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张鑫">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/blog.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -310,6 +320,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -363,6 +395,35 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>谢谢你请我吃糖果</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.jpg" alt="张鑫 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="张鑫 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -383,18 +444,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/12/video/" rel="next" title="自定义video">
-                <i class="fa fa-chevron-left"></i> 自定义video
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/12/javascript01/" rel="prev" title="Html5标签以及弹性盒子">
-                Html5标签以及弹性盒子 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/12/video/" rel="prev" title="自定义video">
+                自定义video <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -460,7 +517,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/blog.jpg"
                alt="张鑫" />
           <p class="site-author-name" itemprop="name">张鑫</p>
            
@@ -479,15 +536,24 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
@@ -627,6 +693,8 @@
   
 
 
+  
+
 
 
 
@@ -654,6 +722,9 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
