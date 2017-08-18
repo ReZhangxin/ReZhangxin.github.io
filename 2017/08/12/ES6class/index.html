@@ -65,7 +65,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Comic Sans MS:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ES6,JavaScript," />
+  <meta name="keywords" content="JavaScript,ES6," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="http://orj6ooggn.bkt.clouddn.com/icon.png?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/blog.jpg?v=5.1.2" />
 
 
 
@@ -95,11 +95,11 @@
 
 
 <meta name="description" content="继承与原型链使用 Object.create 创建对象 ECMAScript5引入新方法：Object.create()可以调用这个方法来创建一个新的对象。新对象的原型就是调用create方法时传入的第一个参数">
-<meta name="keywords" content="ES6,JavaScript">
+<meta name="keywords" content="JavaScript,ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6的Class">
 <meta property="og:url" content="http://zhangss.win/2017/08/12/ES6class/index.html">
-<meta property="og:site_name" content="ReZhangxin&#39;s Blog">
+<meta property="og:site_name" content="张鑫">
 <meta property="og:description" content="继承与原型链使用 Object.create 创建对象 ECMAScript5引入新方法：Object.create()可以调用这个方法来创建一个新的对象。新对象的原型就是调用create方法时传入的第一个参数">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-08-12T05:29:23.326Z">
@@ -140,7 +140,7 @@
 
 
 
-  <title>ES6的Class | ReZhangxin's Blog</title>
+  <title>ES6的Class | 张鑫</title>
   
 
 
@@ -170,7 +170,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">ReZhangxin's Blog</span>
+        <span class="site-title">张鑫</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -201,6 +201,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -262,11 +272,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张鑫">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://orj6ooggn.bkt.clouddn.com/icon.png">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ReZhangxin's Blog">
+      <meta itemprop="name" content="张鑫">
     </span>
 
     
@@ -375,9 +385,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ES6/" rel="tag"># ES6</a>
-          
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
           
         </div>
       
@@ -390,8 +400,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/12/hexo个人博客搭建/" rel="next" title="Hexo个人博客搭建">
-                <i class="fa fa-chevron-left"></i> Hexo个人博客搭建
+              <a href="/2017/08/12/javascript01/" rel="next" title="Html5标签以及弹性盒子">
+                <i class="fa fa-chevron-left"></i> Html5标签以及弹性盒子
               </a>
             
           </div>
@@ -400,8 +410,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/13/浅拷贝和深拷贝/" rel="prev" title="浅拷贝，深拷贝，扁平化">
-                浅拷贝，深拷贝，扁平化 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/12/hexo个人博客搭建/" rel="prev" title="Hexo个人博客搭建">
+                Hexo个人博客搭建 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -467,7 +477,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://orj6ooggn.bkt.clouddn.com/icon.png"
+               src="/images/avatar.gif"
                alt="张鑫" />
           <p class="site-author-name" itemprop="name">张鑫</p>
            
@@ -503,6 +513,26 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ReZhangxin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/p/1005055307075677/home?from=page_100505&mod=TAB#place" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                </a>
+              </span>
+            
           
         </div>
 
