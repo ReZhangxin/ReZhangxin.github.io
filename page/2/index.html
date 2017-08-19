@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -111,7 +111,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/12/scroll/">
+    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/12/ES6class/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张鑫">
@@ -296,7 +296,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/12/scroll/" itemprop="url">获取浏览器的位置</a></h1>
+                <a class="post-title-link" href="/2017/08/12/ES6class/" itemprop="url">ES6的Class</a></h1>
         
 
         <div class="post-meta">
@@ -369,13 +369,12 @@
 
       
         
-          <h2 id="关于浏览器各种位置的获取"><a href="#关于浏览器各种位置的获取" class="headerlink" title="关于浏览器各种位置的获取"></a>关于浏览器各种位置的获取</h2><blockquote>
-<p><code>clientWidth</code> <code>offsetWidth</code> <code>scrollTop</code> <code>innerHeight</code></p>
+          <h2 id="继承与原型链"><a href="#继承与原型链" class="headerlink" title="继承与原型链"></a>继承与原型链</h2><h3 id="使用-Object-create-创建对象"><a href="#使用-Object-create-创建对象" class="headerlink" title="使用 Object.create 创建对象"></a>使用 Object.create 创建对象</h3><blockquote>
+<p><code>ECMAScript5</code>引入新方法：<code>Object.create()</code>可以调用这个方法来创建一个新的对象。新对象的原型就是调用<code>create</code>方法时传入的第一个参数</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="built_in">window</span>.innerHeight; <span class="comment">//获得浏览器窗口的内容区域的高度,包含水平滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> b = <span class="built_in">window</span>.innerWidth;  <span class="comment">//获得浏览器窗口的内容区域的宽度,包含垂直滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> loc = Window.location;  <span class="comment">//获取、设置window对象的location, 或者当前的 URL.</span></div><div class="line"><span class="keyword">const</span> y = <span class="built_in">window</span>.scrollY;     <span class="comment">//y 是文档从顶部开始滚动过的像素值。</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/12/scroll/#more" rel="contents">
+            <a class="btn" href="/2017/08/12/ES6class/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -869,7 +868,7 @@
   <div class="theme-info">
     主题 &mdash;
     <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-      NexT.Muse
+      NexT.Mist
     </a>
   </div>
 
