@@ -85,7 +85,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ES6,JavaScript," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -101,18 +101,18 @@
 
 
 
-<meta name="description" content="继承与原型链使用 Object.create 创建对象 ECMAScript5引入新方法：Object.create()可以调用这个方法来创建一个新的对象。新对象的原型就是调用create方法时传入的第一个参数">
-<meta name="keywords" content="ES6,JavaScript">
+<meta name="description" content="参数按值传递 所有函数参数都是按值传递说具体点，就是把函数外部的值拷贝一份给函数内部的参数就相当于把值从一个变量复制到另一个变量一样  1234567let value =1;function foo(value)&amp;#123;    value = 2;    console.log(value);//2&amp;#125;foo(value);//此时的value是上面value的一个拷贝并不是真正的v">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6的Class">
-<meta property="og:url" content="http://zhangss.win/2017/08/12/ES6class/index.html">
+<meta property="og:title" content="参数按值传递">
+<meta property="og:url" content="http://zhangss.win/2017/08/24/参数按值传递/index.html">
 <meta property="og:site_name" content="张鑫">
-<meta property="og:description" content="继承与原型链使用 Object.create 创建对象 ECMAScript5引入新方法：Object.create()可以调用这个方法来创建一个新的对象。新对象的原型就是调用create方法时传入的第一个参数">
+<meta property="og:description" content="参数按值传递 所有函数参数都是按值传递说具体点，就是把函数外部的值拷贝一份给函数内部的参数就相当于把值从一个变量复制到另一个变量一样  1234567let value =1;function foo(value)&amp;#123;    value = 2;    console.log(value);//2&amp;#125;foo(value);//此时的value是上面value的一个拷贝并不是真正的v">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-18T13:21:19.852Z">
+<meta property="og:updated_time" content="2017-08-24T11:49:20.812Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6的Class">
-<meta name="twitter:description" content="继承与原型链使用 Object.create 创建对象 ECMAScript5引入新方法：Object.create()可以调用这个方法来创建一个新的对象。新对象的原型就是调用create方法时传入的第一个参数">
+<meta name="twitter:title" content="参数按值传递">
+<meta name="twitter:description" content="参数按值传递 所有函数参数都是按值传递说具体点，就是把函数外部的值拷贝一份给函数内部的参数就相当于把值从一个变量复制到另一个变量一样  1234567let value =1;function foo(value)&amp;#123;    value = 2;    console.log(value);//2&amp;#125;foo(value);//此时的value是上面value的一个拷贝并不是真正的v">
 
 
 
@@ -141,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://zhangss.win/2017/08/12/ES6class/"/>
+  <link rel="canonical" href="http://zhangss.win/2017/08/24/参数按值传递/"/>
 
 
 
 
 
-  <title>ES6的Class | 张鑫</title>
+  <title>参数按值传递 | 张鑫</title>
   
 
 
@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/12/ES6class/">
+    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/24/参数按值传递/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张鑫">
@@ -321,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6的Class</h1>
+          <h1 class="post-title" itemprop="name headline">参数按值传递</h1>
         
 
         <div class="post-meta">
@@ -333,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-12T00:00:00+08:00">
-                2017-08-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-24T19:47:03+08:00">
+                2017-08-24
               </time>
             
 
@@ -393,40 +393,21 @@
       
 
       
-        <h2 id="继承与原型链"><a href="#继承与原型链" class="headerlink" title="继承与原型链"></a>继承与原型链</h2><h3 id="使用-Object-create-创建对象"><a href="#使用-Object-create-创建对象" class="headerlink" title="使用 Object.create 创建对象"></a>使用 Object.create 创建对象</h3><blockquote>
-<p><code>ECMAScript5</code>引入新方法：<code>Object.create()</code>可以调用这个方法来创建一个新的对象。新对象的原型就是调用<code>create</code>方法时传入的第一个参数</p>
+        <h1 id="参数按值传递"><a href="#参数按值传递" class="headerlink" title="参数按值传递"></a>参数按值传递</h1><blockquote>
+<p>所有函数参数都是按值传递<br>说具体点，就是把函数外部的值<strong>拷贝</strong>一份给函数内部的参数<br>就相当于把值从一个变量复制到另一个变量一样</p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> value =<span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">value</span>)</span>&#123;</div><div class="line">    value = <span class="number">2</span>;</div><div class="line">    <span class="built_in">console</span>.log(value);<span class="comment">//2</span></div><div class="line">&#125;</div><div class="line">foo(value);<span class="comment">//此时的value是上面value的一个拷贝并不是真正的value本身</span></div><div class="line"><span class="built_in">console</span>.log(value);<span class="comment">//1 所以此时输出的是1</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;;</div><div class="line"><span class="comment">// a ---&gt; Object.prototype ---&gt;null</span></div><div class="line"><span class="keyword">const</span> b = <span class="built_in">Object</span>.create(a);</div><div class="line"><span class="comment">// b ---&gt; a ---&gt;Object.prototype ---&gt;null</span></div><div class="line"><span class="built_in">console</span>.log(b.a);<span class="comment">//1 继承a的</span></div><div class="line"><span class="keyword">const</span> c = <span class="built_in">Object</span>.create(b);</div><div class="line"><span class="comment">// c ---&gt; b ---&gt; a ---&gt; Object.prototype ---&gt; null</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> d = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</div><div class="line"><span class="comment">// d ---&gt; null</span></div><div class="line"><span class="built_in">console</span>.log(d.hasOwnProperty); <span class="comment">// undefined, 因为d没有继承Object.prototype</span></div></pre></td></tr></table></figure>
-<h3 id="ES6使用一套关键字来实现class"><a href="#ES6使用一套关键字来实现class" class="headerlink" title="ES6使用一套关键字来实现class"></a>ES6使用一套关键字来实现<code>class</code></h3><blockquote>
-<p>ECMAScript6 引入了一套新的关键字用来实现class。<br>使用基于类语言的开发人员会对这些结构感到熟悉，但它们是不一样的。<br>JavaScript 仍然是基于原型的。这些新的关键字包括 <code>class</code>, <code>constructor</code>, <code>static</code>, <code>extends</code>, 和 <code>super</code></p>
-<p>检测对象的属性是定义在自身上还是在原型链上，有必要使用 <code>hasOwnProperty</code> 方法，所有继承自 <code>Object.proptotype</code> 的对象都包含这个方法。<br><code>hasOwnProperty</code> 是 <code>JavaScript</code> 中唯一一个只涉及对象自身属性而不会遍历原型链的方法。</p>
-</blockquote>
-<p>语法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span></div><div class="line">class name [extends]&#123;</div><div class="line">     <span class="comment">//class body</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>描述</p>
-<blockquote>
-<p><code>class</code> 声明体在严格模式下运行。构造函数是可选的<br><code>class</code> 声明不可以提升</p>
-</blockquote>
-<p><code>constructor</code></p>
-<blockquote>
-<p>构造方法是创建和初始化使用类创建的一个对象的一种特殊方法。</p>
-</blockquote>
-<p>语法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>([arguments])&#123;...&#125;</div></pre></td></tr></table></figure>
-<p>描述</p>
-<blockquote>
+<h2 id="引用传递？？"><a href="#引用传递？？" class="headerlink" title="引用传递？？"></a>引用传递？？</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    value: <span class="number">1</span></div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    obj.value = <span class="number">2</span>;</div><div class="line">    <span class="built_in">console</span>.log(obj.value)<span class="comment">//2</span></div><div class="line">&#125;</div><div class="line">foo(obj);</div><div class="line"><span class="built_in">console</span>.log(obj.value);<span class="comment">//2</span></div></pre></td></tr></table></figure>
+<h2 id="不是引用传递！！"><a href="#不是引用传递！！" class="headerlink" title="不是引用传递！！"></a>不是引用传递！！</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    value: <span class="number">1</span></div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    obj = &#123;<span class="attr">value</span>:<span class="number">2</span>&#125;;</div><div class="line">    <span class="built_in">console</span>.log(obj); <span class="comment">//&#123;value:2&#125;</span></div><div class="line">&#125;</div><div class="line">foo(obj);</div><div class="line"><span class="built_in">console</span>.log(obj); <span class="comment">//&#123;value:1&#125;</span></div></pre></td></tr></table></figure>
+<h2 id="总结-参数按值传递！！"><a href="#总结-参数按值传递！！" class="headerlink" title="总结(参数按值传递！！)"></a>总结(参数按值传递！！)</h2><blockquote>
 <ul>
-<li>一个 <code>class</code> 中只能有一个指定的 <code>constructor</code>（构造）方法。<br>如果 <code>class</code> 定义的时候包含多个构造方法，程序将会抛出 <code>SyntaxError</code> 错误。</li>
-<li>在构造方法中可以使用 <code>super</code> 关键字来调用父类的构造方法。</li>
-<li>如果没有显式指定构造方法，则会添加默认的<code>constructor</code>方法。</li>
+<li>在传递基本类型的值时，被传递的值会复制给一个局部变量(也就是arguments)</li>
+<li>在传递引用类型的值时，会把这个值在内存中的地址复制给一个局部变量<br>因此这个局部变量的变化会反应在函数的外部。</li>
+<li>当在函数内部重写对象时，这个变量的引用就是一个<strong>局部对象</strong>了。<br>这个局部对象会在函数执行完毕后立即被销毁。</li>
 </ul>
 </blockquote>
-<p><code>extends</code></p>
-<blockquote>
-<p><code>extends</code>关键词被用在类声明或者类表达式上，以创建一个类是另一个类的子类。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Polygon</span> </span>&#123;</div><div class="line">     <span class="keyword">constructor</span>(height,width)&#123;</div><div class="line">          <span class="keyword">this</span>.name = <span class="string">'Polygon'</span>;</div><div class="line">          <span class="keyword">this</span>.height = height;</div><div class="line">          <span class="keyword">this</span>.width = width;</div><div class="line">     &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Square</span> <span class="keyword">extends</span> <span class="title">Polygon</span></span>&#123;</div><div class="line">     <span class="keyword">constructor</span>(length)&#123;</div><div class="line">          <span class="keyword">super</span>(length,length);</div><div class="line">          <span class="comment">//在构造器使用的 super()，super()只能在构造器中使用，super函数一定要在this可以使用之前调用。</span></div><div class="line">          <span class="keyword">this</span>.name = <span class="string">'Square'</span>;</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">let</span> person = &#123;</div><div class="line">    name: <span class="string">"张鑫"</span>,</div><div class="line">    age:<span class="number">22</span></div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">p</span>)</span>&#123;</div><div class="line">    p.age = <span class="number">222</span>;  <span class="comment">//在这里p和person指向同一个对象所以age改变在堆内存的age就改变</span></div><div class="line">    p =&#123;</div><div class="line">        name:<span class="string">"小鑫"</span>,</div><div class="line">        age:<span class="number">12</span> <span class="comment">//在这里为p重新开辟了一个内存空间与person指向不是同一个</span></div><div class="line">    &#125;;</div><div class="line">    <span class="built_in">console</span>.log(p); <span class="comment">//这里输出&#123;name:"小鑫",age:12&#125;</span></div><div class="line">&#125;</div><div class="line">change(person);</div><div class="line"><span class="built_in">console</span>.log(person); <span class="comment">//这里的person是最初的person内存空间因为被p.age=222改过所以</span></div><div class="line">                     <span class="comment">//会输出&#123;name:"张鑫",age:222&#125;</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -473,8 +454,6 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ES6/" rel="tag"># ES6</a>
-          
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
@@ -488,8 +467,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/12/Array Cardio/" rel="next" title="Array Cardio">
-                <i class="fa fa-chevron-left"></i> Array Cardio
+              <a href="/2017/08/23/防抖与节流/" rel="next" title="防抖与节流">
+                <i class="fa fa-chevron-left"></i> 防抖与节流
               </a>
             
           </div>
@@ -497,10 +476,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/12/video/" rel="prev" title="自定义video">
-                自定义video <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -654,7 +629,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承与原型链"><span class="nav-number">1.</span> <span class="nav-text">继承与原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-Object-create-创建对象"><span class="nav-number">1.1.</span> <span class="nav-text">使用 Object.create 创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6使用一套关键字来实现class"><span class="nav-number">1.2.</span> <span class="nav-text">ES6使用一套关键字来实现class</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参数按值传递"><span class="nav-number">1.</span> <span class="nav-text">参数按值传递</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引用传递？？"><span class="nav-number">1.1.</span> <span class="nav-text">引用传递？？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不是引用传递！！"><span class="nav-number">1.2.</span> <span class="nav-text">不是引用传递！！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结-参数按值传递！！"><span class="nav-number">1.3.</span> <span class="nav-text">总结(参数按值传递！！)</span></a></li></ol></li></ol></div>
             
 
           </div>
