@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +13,7 @@
         }
         body:before{
             content:"";
-            background: url("http://ovbz10vsg.bkt.clouddn.com/js30-min.jpg");
+            background: url("http://ovbz10vsg.bkt.clouddn.com/js30-min.jpg") center;
             background-size:cover;
             position:fixed;z-index: -1;
             width:100%;height:100%;
@@ -42,7 +43,7 @@
             height:0;visibility:hidden;
         }
         .warpper .boxx{
-            width:275px;height:265px;float:left;
+            width:275px;height:250px;float:left;
             margin:12px;background:rgba(0,0,0,.6);
             box-shadow: 0 0  5px rgba(255,255,255,.5);
             border-radius: 5px;
@@ -55,7 +56,7 @@
             transform:translateY(-5px);
         }
         .demo-date{
-            position:absolute;background: rgba(0,0,0,.5);font-size: 1rem;
+            position:absolute;background: rgba(0,0,0,.8);font-size: 1rem;
             padding:8px;display: inline-block;line-height: 1.3rem;color:aliceblue
         }
         .demo-title{
@@ -101,11 +102,10 @@
         <div id="box" class="boxx" style="display:none">
             <div>
                 <span class="demo-date"></span>
-                <img class="demo-img" src="" alt="loading" width="275" height="130">
+                <img class="demo-img" src="" alt="loading" width="275">
             </div>
             <div>
                 <h3 class="demo-title"></h3>
-                <div class="demo-tags"></div>
                 <a class="demo-link" href="javascript:" target="_blank" rel="external"></a>
             </div>   
         </div>
@@ -116,38 +116,63 @@
    [
         {
             date:"day1",
-            imgSrc:"https://s3.amazonaws.com/js30-cdn/small0.jpg ",
+            imgSrc:"http://ovbz10vsg.bkt.clouddn.com/small0-min.jpg",
             title:"JS模拟敲鼓效果",
-            tags:["DOM & INTERFACE</br>","FRIENDS WITH CSS</br>","AUDIO + VIDEO</br>"],
             link:"demo/day01/index.html"
        },
        {
             date:"day2",
-            imgSrc:"https://s3.amazonaws.com/js30-cdn/small0.jpg ",
-            title:"boke",
-            tags:["a","b","c"],
-            link:"demo/css变量.html"
+            imgSrc:"http://ovbz10vsg.bkt.clouddn.com/small1-min.jpg ",
+            title:"JS模拟时钟效果",
+            link:"demo/day02/index.html"
        },
        {
             date:"day3",
-            imgSrc:"https://s3.amazonaws.com/js30-cdn/small0.jpg ",
-            title:"boke",
-            tags:["a","b","c"],
-            link:"demo/自定义视屏播放器.html"
-       }, 
-       {
-            date:"day4",
-            imgSrc:"https://s3.amazonaws.com/js30-cdn/small0.jpg ",
-            title:"boke",
-            tags:["a","b","c"],
-            link:"demo/自定义视屏播放器.html"
+            imgSrc:"http://ovbz10vsg.bkt.clouddn.com/small2-min.jpg ",
+            title:"JS操作CSS变量",
+            link:"demo/day03/index.html"
        },
        {
-            date:"day1",
-            imgSrc:"https://s3.amazonaws.com/js30-cdn/small0.jpg ",
-            title:"boke",
-            tags:["a","b","c"],
-            link:"demo/自定义视屏播放器.html"
+            date:"day4",
+            imgSrc:"http://ovbz10vsg.bkt.clouddn.com/small3-min.jpg ",
+            title:"数组操作01",
+            link:"demo/day04/index.html"
+       },
+       {
+            date:"day5",
+            imgSrc:"http://ovbz10vsg.bkt.clouddn.com/small4-min.jpg ",
+            title:"Flex 实现可伸缩的图片墙",
+            link:"demo/day05/index.html"
+       },
+       {
+            date:"day6",
+            imgSrc:"http://ovbz10vsg.bkt.clouddn.com/small5-min.jpg ",
+            title:" Fetch、filter、正则表达式实现快速古诗匹配",
+            link:"demo/day06/index.html"
+       },
+       {
+            date:"day7",
+            imgSrc:"http://ovbz10vsg.bkt.clouddn.com/small6-min.jpg ",
+            title:" 数组操作02",
+            link:"demo/day07/index.html"
+       },
+       {
+            date:"day8",
+            imgSrc:"http://ovbz10vsg.bkt.clouddn.com/small7-min.jpg ",
+            title:" Canvas 实现彩虹画笔绘画板",
+            link:"demo/day08/index.html"
+       },
+       {
+            date:"day9",
+            imgSrc:"http://ovbz10vsg.bkt.clouddn.com/small8-min.jpg ",
+            title:"Console 调试各种姿势",
+            link:"demo/day09/index.html"
+       },
+       {
+            date:"day10",
+            imgSrc:"http://ovbz10vsg.bkt.clouddn.com/small9-min.jpg ",
+            title:" Shift 批量选中",
+            link:"demo/day010/index.html"
        }
    ]
    for(var i=0;i<demos.length;i++){
@@ -156,7 +181,6 @@
     $('#'+id).find('.demo-date').html(demos[i].date);
     $('#'+id).find('.demo-img').attr('src',demos[i].imgSrc);
     $('#'+id).find('.demo-title').attr('title',demos[i].title).html(demos[i].title);
-    $('#'+id).find('.demo-tags').html(demos[i].tags);
     $('#'+id).find('.demo-link').attr('href',demos[i].link).html('Enter>>');
    }
 </script>
