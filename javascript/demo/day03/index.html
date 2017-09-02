@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Day03</title>
+    <style>
+         :root{
+            --base:#abcdef;
+            --spacing:10px;
+            --blur:10px;
+        }
+        html{
+            background:url(//ovbz10vsg.bkt.clouddn.com/day03-min.jpg) no-repeat center;
+            background-size: cover;         
+        }
+        body{margin:0;font-size: 30px;
+            font-family: "Comic Sans MS";
+            color:white;
+        }
+       
+        .box{width:800px;margin:0 auto;text-align: center;}
+        .color{color:var(--base);}
+      
+        .imgs{width:500px;padding:var(--spacing);background-color:var(--base);margin-top:20px;filter: blur(var(--blur));}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>用<span class="color">JS</span>控制CSS变量</h3>
+        <div>
+            <label for="spacing">Spacing</label>
+            <input name="spacing" id="spacing" type="range" min="10" max="100" value="10" data-sizing="px">
+            <label for="blur">Blur</label>
+            <input name="blur" id="blur" type="range" min="0" max="25" value="5" data-sizing="px">
+            <label for="base">Base Color</label>
+            <input type="color" id="base" name="base" data-sizing="">
+        </div>
+        <div>img{padding:<label id="label_spacing">10px</label>;
+            filter:<label id="label_blur">10px</label>; 
+            background:<label id="label_base"> #abcdef</label>; }</div>
+        
+        <img class="imgs" src="//ovbz10vsg.bkt.clouddn.com/day03-min.jpg" alt="">
+    </div>
+
+    <script>
+        const inputs = document.querySelectorAll('input');
+        function handUpdate(){
+            const unit = this.dataset.sizing || '';
+            document.documentElement.style.setProperty(`--${this.name}`,this.value+unit);
+            document.getElementById(`label_${this.name}`).innerText=`${this.value}`;
+        }
+        inputs.forEach(index =>{index.addEventListener('change',handUpdate)})
+        inputs.forEach(index =>{index.addEventListener('mousemove',handUpdate)})
+    </script>
+</body>
+</html>

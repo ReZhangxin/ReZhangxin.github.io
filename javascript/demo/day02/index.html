@@ -11,7 +11,7 @@
         }
         body{margin:0; display: flex;justify-content: center;align-items: center;min-height: 100vh;}
         .box{
-            width:30rem;height:30rem;border:1rem solid antiquewhite;border-radius: 50%;
+            min-width:30rem;height:30rem;border:1rem solid antiquewhite;border-radius: 50%;
             box-shadow: 0 0 .7rem rgba(0,0,0,.5),inset 0 0 .5rem rgba(0,0,0,.5);
             position:relative;
         }
@@ -45,35 +45,50 @@
         const hour =document.querySelector('.hour');
         const min =document.querySelector('.min');
         const second =document.querySelector('.second');
-
-        
-        
-        let secondDeg = 0,
-        minDeg = 0,
-        hourDeg = 0;
-        
-        function initDate() {
+        const hand = document.querySelectorAll('.hand')
+        function updateDate(){
             const date = new Date();
-            const second = date.getSeconds();
-            secondDeg = 90 + (second / 60) * 360;
-            const min = date.getMinutes();
-            minDeg = 90 + (min / 60) * 360 + ((second / 60) / 60) * 360;
-            const hour = date.getHours();
-            hourDeg = 90 + (hour / 12) * 360 + ((min / 60) / 12) * 360 + (((second / 60) / 60) / 12) * 360;
+            const seconds = date.getSeconds();
+            const secondsDeg = 90+(seconds / 60) * 360;
+            second.style.transform = `rotate(${secondsDeg}deg)`;
+            const mins = date.getMinutes();
+            const minsDeg =90+ (mins / 60) * 360 + (seconds/60) /60 *360;
+            min.style.transform = `rotate(${minsDeg}deg)`;
+            const hours = date.getHours();
+            const hoursDeg = 90+(hours / 12)*360 + ((mins / 60) / 12) * 360 + (((seconds / 60) / 60) / 12) * 360;
+            hour.style.transform = `rotate(${hoursDeg}deg)`;
+            if(secondsDeg === 90){
+               second.style.transition= 'all 0s';
+            }else{second.style.transition = 'all 0.05s'}
         }
         
-        function updateDate() {
-            secondDeg += (1 / 60) * 360;
-            minDeg += ((1 / 60) / 60) * 360;
-            hourDeg += (((1 / 60) / 60) / 12);
+        // let secondDeg = 0,
+        // minDeg = 0,
+        // hourDeg = 0;
+        
+        // function initDate() {
+        //     const date = new Date();
+        //     const second = date.getSeconds();
+        //     secondDeg = 90 + (second / 60) * 360;
+        //     const min = date.getMinutes();
+        //     minDeg = 90 + (min / 60) * 360 + ((second / 60) / 60) * 360;
+        //     const hour = date.getHours();
+        //     hourDeg = 90 + (hour / 12) * 360 + ((min / 60) / 12) * 360 + (((second / 60) / 60) / 12) * 360;
+        // }
+        
+        // function updateDate() {
+        //     secondDeg += (1 / 60) * 360;
+        //     minDeg += ((1 / 60) / 60) * 360;
+        //     hourDeg += (((1 / 60) / 60) / 12);
             
-            second.style.transform = `rotate(${ secondDeg}deg)`;
-            min.style.transform = `rotate(${ minDeg }deg)`;
-            hour.style.transform = `rotate(${ hourDeg }deg)`;
-        }
+        //     second.style.transform = `rotate(${ secondDeg}deg)`;
+        //     min.style.transform = `rotate(${ minDeg }deg)`;
+        //     hour.style.transform = `rotate(${ hourDeg }deg)`;
+        // }
         
-        initDate();
+        
         setInterval(updateDate, 1000);
+        updateDate();
     </script>
 </body>
 </html>

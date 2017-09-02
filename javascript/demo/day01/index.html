@@ -125,13 +125,16 @@
           audio.currentTime = 0;         
           audio.play();
         }
-
         //transitionend 事件会在 CSS transition 结束后触发. 
        const keys = document.querySelectorAll('.key');//这是一组数据并不是单个数据
        //我们每按下一个或者多个是单独的并不是全部
        keys.forEach(key => key.addEventListener('transitionend',removeTransition));
        function removeTransition(e){
-         if(e.propertyName !== 'transform') return;
+         // 1.如果是transform的话按久了样式就不会去掉
+         // 浏览器多过渡动画会优化其动画，在连续点击时不明显的动画就不会执行
+         // 2.在检测transform或者box-shadow属性时将样式中的transition时间改长一些
+         // 也不会出现样式不恢复等问题+
+         if(e.propertyName !== 'border-left-color') return;
          e.target.classList.remove('playing');
        }
     </script>
