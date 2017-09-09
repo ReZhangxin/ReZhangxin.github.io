@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html{box-sizing:border-box;}
+        *,*:before,*:after{box-sizing:inherit;}
+        body{font-family: "Comic Sans MS";margin:0;font-size:20px;}
+        .panels{min-height:100vh;width:100%;display:flex;flex:1;overflow: hidden;}
+        .panel{
+            color:white;display:flex;flex-direction: column;
+            text-transform:uppercase;align-items: center;
+            background-size:cover;justify-content: center;flex:1;
+            transition:
+                font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+                flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+                background 0.2s;
+        }
+        .panel1{background:url(http://ovbz10vsg.bkt.clouddn.com/day05-1-min.jpg) bottom left;}
+        .panel2{background:url(http://ovbz10vsg.bkt.clouddn.com/day05-2-min.jpg) bottom left;}
+        .panel3{background:url(http://ovbz10vsg.bkt.clouddn.com/day05-3-min.jpg) bottom left;}
+        .panel4{background:url(http://ovbz10vsg.bkt.clouddn.com/day05-4-min.jpg) bottom left;}
+        .panel5{background:url(http://ovbz10vsg.bkt.clouddn.com/day05-5-min.jpg) bottom left;}
+        
+    </style>
+</head>
+<body>
+    <div class="panels">
+        <div class="panel panel1">
+            <p>Hey</p>
+            <p>Let's</p>
+            <p>Dance</p>
+        </div>
+        <div class="panel panel2">
+            <p>Give</p>
+            <p>Take</p>
+            <p>Receive</p>
+        </div>
+        <div class="panel panel3">
+            <p>Experience</p>
+            <p>It</p>
+            <p>Today</p>
+        </div>
+        <div class="panel panel4">
+            <p>Give</p>
+            <p>All</p>
+            <p>You can</p>
+        </div>
+        <div class="panel panel5">
+            <p>Life</p>
+            <p>In</p>
+            <p>Motion</p>
+        </div>
+                                        
+    </div>
+</body>
+</html>
