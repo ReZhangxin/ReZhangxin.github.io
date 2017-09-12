@@ -752,7 +752,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/12/video/">
+    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/12/scroll/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张鑫">
@@ -771,7 +771,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/12/video/" itemprop="url">自定义video</a></h1>
+                <a class="post-title-link" href="/2017/08/12/scroll/" itemprop="url">获取浏览器的位置</a></h1>
         
 
         <div class="post-meta">
@@ -844,18 +844,13 @@
 
       
         
-          <h2 id="Node-textContent"><a href="#Node-textContent" class="headerlink" title="Node.textContent"></a>Node.textContent</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p> <code>const icon = this.paused ? &#39;►&#39; : &#39;❚ ❚&#39;;</code><br> <code>toggle.textContent = icon;</code></p>
+          <h2 id="关于浏览器各种位置的获取"><a href="#关于浏览器各种位置的获取" class="headerlink" title="关于浏览器各种位置的获取"></a>关于浏览器各种位置的获取</h2><blockquote>
+<p><code>clientWidth</code> <code>offsetWidth</code> <code>scrollTop</code> <code>innerHeight</code></p>
 </blockquote>
-<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><blockquote>
-<ul>
-<li>Node.textContent属性表示一个节点及其后代的文本内容</li>
-<li><code>document.documentElement.textContent</code>返回整个文档文本以及<br> CDATA数据(不应由 XML 解析器进行解析的文本数据)</li>
-</ul>
-</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="built_in">window</span>.innerHeight; <span class="comment">//获得浏览器窗口的内容区域的高度,包含水平滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> b = <span class="built_in">window</span>.innerWidth;  <span class="comment">//获得浏览器窗口的内容区域的宽度,包含垂直滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> loc = Window.location;  <span class="comment">//获取、设置window对象的location, 或者当前的 URL.</span></div><div class="line"><span class="keyword">const</span> y = <span class="built_in">window</span>.scrollY;     <span class="comment">//y 是文档从顶部开始滚动过的像素值。</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/12/video/#more" rel="contents">
+            <a class="btn" href="/2017/08/12/scroll/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -906,7 +901,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/12/Array Cardio/">
+    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/12/ES6class/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张鑫">
@@ -925,7 +920,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/12/Array Cardio/" itemprop="url">Array Cardio</a></h1>
+                <a class="post-title-link" href="/2017/08/12/ES6class/" itemprop="url">ES6的Class</a></h1>
         
 
         <div class="post-meta">
@@ -960,8 +955,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript原生案例/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript原生案例</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -998,14 +993,12 @@
 
       
         
-          <h2 id="Array-Cardio"><a href="#Array-Cardio" class="headerlink" title="Array Cardio"></a>Array Cardio</h2><h3 id="主要目的"><a href="#主要目的" class="headerlink" title="主要目的"></a>主要目的</h3><blockquote>
-<p>熟悉Array的一些方法 <code>filter</code> <code>map</code> <code>sort</code> <code>reduce</code> <code>some</code> <code>every</code> <code>find</code> <code>splice</code> <code>slice</code> <code>concat</code> </p>
-<p>在详细介绍之前，很有必要对ECMAScript5中的数组方法做一个概述。<br>首先，大多数方法的第一个参数接收一个函数，并且对数组的每一个元素（或一些元素）调用一次该函数<br>如果是稀疏数组，对不存在的元素不调用传递的函数。<br>在大多数情况下，调用提供的函数使用三个参数：数组元素、元素的索引、数组本身<br>通常只需要第一个参数值，可以忽略后两个参数。第二个参数是可选的，如果有第二个参数<br>则调用的函数被看做是第二个参数的方法</p>
-<p><strong>稀疏数组</strong> 包含从0开始的不连续索引的数组 <code>const a = new Array(6)</code>数组没有元素但<code>a.length</code>是6</p>
+          <h2 id="继承与原型链"><a href="#继承与原型链" class="headerlink" title="继承与原型链"></a>继承与原型链</h2><h3 id="使用-Object-create-创建对象"><a href="#使用-Object-create-创建对象" class="headerlink" title="使用 Object.create 创建对象"></a>使用 Object.create 创建对象</h3><blockquote>
+<p><code>ECMAScript5</code>引入新方法：<code>Object.create()</code>可以调用这个方法来创建一个新的对象。新对象的原型就是调用<code>create</code>方法时传入的第一个参数</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/12/Array Cardio/#more" rel="contents">
+            <a class="btn" href="/2017/08/12/ES6class/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
