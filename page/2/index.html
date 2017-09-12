@@ -752,7 +752,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/12/scroll/">
+    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/12/hexo个人博客搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张鑫">
@@ -771,7 +771,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/12/scroll/" itemprop="url">获取浏览器的位置</a></h1>
+                <a class="post-title-link" href="/2017/08/12/hexo个人博客搭建/" itemprop="url">Hexo个人博客搭建</a></h1>
         
 
         <div class="post-meta">
@@ -806,8 +806,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript原生案例/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript原生案例</span>
+                  <a href="/categories/博客搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">博客搭建</span>
                   </a>
                 </span>
 
@@ -844,13 +844,12 @@
 
       
         
-          <h2 id="关于浏览器各种位置的获取"><a href="#关于浏览器各种位置的获取" class="headerlink" title="关于浏览器各种位置的获取"></a>关于浏览器各种位置的获取</h2><blockquote>
-<p><code>clientWidth</code> <code>offsetWidth</code> <code>scrollTop</code> <code>innerHeight</code></p>
+          <h2 id="1、安装git-和Node"><a href="#1、安装git-和Node" class="headerlink" title="1、安装git 和Node"></a>1、安装<code>git</code> 和<code>Node</code></h2><h2 id="2、在cmd安装hexo"><a href="#2、在cmd安装hexo" class="headerlink" title="2、在cmd安装hexo"></a>2、在<code>cmd</code>安装<code>hexo</code></h2><blockquote>
+<p><code>npm install -g hexo-cli</code><br>在安装过程中遇到<code>npm</code>卡顿的情况，解决方法就是修改安装源。<br><code>npm config set registry http://registry.cnpmjs.org</code><br><code>npm info underscore</code>如果上面配置正确就会输出一些内容</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="built_in">window</span>.innerHeight; <span class="comment">//获得浏览器窗口的内容区域的高度,包含水平滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> b = <span class="built_in">window</span>.innerWidth;  <span class="comment">//获得浏览器窗口的内容区域的宽度,包含垂直滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> loc = Window.location;  <span class="comment">//获取、设置window对象的location, 或者当前的 URL.</span></div><div class="line"><span class="keyword">const</span> y = <span class="built_in">window</span>.scrollY;     <span class="comment">//y 是文档从顶部开始滚动过的像素值。</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/12/scroll/#more" rel="contents">
+            <a class="btn" href="/2017/08/12/hexo个人博客搭建/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
