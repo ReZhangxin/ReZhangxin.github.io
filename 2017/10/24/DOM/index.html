@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Comic Sans MS:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript,DOM," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/blog.jpg?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="DOMDOM 描绘了一个层次化的节点树，允许开发人员添加、移除和修改页面的某一部分。  DOM技术：  php里边有：php语言 与 xml/html标签之间沟通的一个桥梁。 javascript里边有：js语言与html/xml标签之间沟通的一个桥梁。">
+<meta name="keywords" content="JavaScript,DOM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM">
+<meta property="og:url" content="http://zhangss.win/2017/10/24/DOM/index.html">
+<meta property="og:site_name" content="张鑫">
+<meta property="og:description" content="DOMDOM 描绘了一个层次化的节点树，允许开发人员添加、移除和修改页面的某一部分。  DOM技术：  php里边有：php语言 与 xml/html标签之间沟通的一个桥梁。 javascript里边有：js语言与html/xml标签之间沟通的一个桥梁。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/1507710627%281%29.png">
+<meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/1507710880%281%29.png">
+<meta property="og:image" content="http://otxurl2qj.bkt.clouddn.com/1507710920%281%29.png">
+<meta property="og:updated_time" content="2017-10-24T12:48:33.061Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DOM">
+<meta name="twitter:description" content="DOMDOM 描绘了一个层次化的节点树，允许开发人员添加、移除和修改页面的某一部分。  DOM技术：  php里边有：php语言 与 xml/html标签之间沟通的一个桥梁。 javascript里边有：js语言与html/xml标签之间沟通的一个桥梁。">
+<meta name="twitter:image" content="http://otxurl2qj.bkt.clouddn.com/1507710627%281%29.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhangss.win/2017/10/24/DOM/"/>
+
+
+
+
+
+  <title>DOM | 张鑫</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">张鑫</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">勿忘初心，方得始终。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-music">
+          <a href="/music/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            音乐
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demos">
+          <a href="/javascript/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th-large"></i> <br />
+            
+            案例
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/10/24/DOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张鑫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鑫">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">DOM</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T20:46:11+08:00">
+                2017-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DOM/" itemprop="url" rel="index">
+                    <span itemprop="name">DOM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>DOM 描绘了一个层次化的节点树，允许开发人员添加、移除和修改页面的某一部分。 </p>
+<p>DOM技术：</p>
+<ul>
+<li>php里边有：php语言 与 xml/html标签之间沟通的一个桥梁。</li>
+<li>javascript里边有：js语言与html/xml标签之间沟通的一个桥梁。<a id="more"></a>
+<h2 id="DOM1-节点层次"><a href="#DOM1-节点层次" class="headerlink" title="DOM1 节点层次"></a>DOM1 节点层次</h2></li>
+</ul>
+<blockquote>
+<p>节点分为几种不同的类型，每种类型分别表示文档中不同的信息及（或）标记。每个节点都拥有各自的特点、数据和方法，另<br>外也与其他节点存在某种关系。</p>
+</blockquote>
+<p>每一段标记都可以通过树中的一个节点来表示： </p>
+<ul>
+<li>HTML 元素通过元素节点表示，</li>
+<li>特性（attribute）通过特性节点表示，</li>
+<li>文档类型通过文档类型节点表示，</li>
+<li>注释则通过注释节点表示。</li>
+</ul>
+<p>总共有 12 种节点类型，这些类型都继承自一个基类型。</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> Node.ELEMENT_NODE(1)；</li>
+<li style="list-style: none"><input type="checkbox" checked> Node.ATTRIBUTE_NODE(2)；</li>
+<li style="list-style: none"><input type="checkbox" checked> Node.TEXT_NODE(3)；</li>
+<li style="list-style: none"><input type="checkbox" checked> Node.CDATA_SECTION_NODE(4)；</li>
+<li style="list-style: none"><input type="checkbox" checked> Node.ENTITY_REFERENCE_NODE(5)；</li>
+<li style="list-style: none"><input type="checkbox" checked> Node.ENTITY_NODE(6)；</li>
+<li style="list-style: none"><input type="checkbox" checked> Node.PROCESSING_INSTRUCTION_NODE(7)；</li>
+<li style="list-style: none"><input type="checkbox" checked> Node.COMMENT_NODE(8)；</li>
+<li style="list-style: none"><input type="checkbox" checked> Node.DOCUMENT_NODE(9)；</li>
+<li style="list-style: none"><input type="checkbox" checked> Node.DOCUMENT_TYPE_NODE(10)；</li>
+<li style="list-style: none"><input type="checkbox" checked> Node.DOCUMENT_FRAGMENT_NODE(11)；</li>
+<li style="list-style: none"><input type="checkbox" checked> Node.NOTATION_NODE(12)。</li>
+</ul>
+<p>为了确保跨浏览器兼容，最好还是将 nodeType 属性与数字值进行比较，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (someNode.nodeType == <span class="number">1</span>)&#123; <span class="comment">//适用于所有浏览器</span></div><div class="line">    alert(<span class="string">"Node is an element."</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>dom就是学习利用javascript如何实现对html标签内容的增、删、改、查等操作</p>
+<h3 id="元素节点获取"><a href="#元素节点获取" class="headerlink" title="元素节点获取"></a>元素节点获取</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//选择所有img标签返回一个NodeList</span></div><div class="line"><span class="keyword">const</span> img = <span class="built_in">document</span>.querySelectorALl(<span class="string">"img"</span>);</div></pre></td></tr></table></figure>
+<h3 id="文本节点获取"><a href="#文本节点获取" class="headerlink" title="文本节点获取"></a>文本节点获取</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&lt;div&gt;hello&lt;/div&gt;</span></div><div class="line"><span class="keyword">var</span> dvnode = <span class="built_in">document</span>.getElementsByTagName(‘div’)[<span class="number">0</span>];</div><div class="line">dvnode.firstChild;  <span class="comment">//(或调用lastChild)获得元素div内部的第一个子节点对象</span></div></pre></td></tr></table></figure>
+<p>对 <code>arguments</code> 对象使用 <code>Array.prototype.slice()</code>方法可以<br>将其转换为数组。而采用同样的方法，也可以将 <code>NodeList</code> 对象转换为数组。</p>
+<h3 id="兄弟节点"><a href="#兄弟节点" class="headerlink" title="兄弟节点"></a>兄弟节点</h3><ul>
+<li><code>firstChild</code>、<code>lastChild</code>:父节点获得第一个/最后一个子节点</li>
+<li><code>nextSibling</code>:获得下个兄弟节点</li>
+<li><code>previousSibling</code>:获得上个兄弟节点</li>
+<li><code>childNodes</code>:父节点获得内部全部的子节点信息</li>
+</ul>
+<p>以上属性在主流浏览器(火狐firefox、chrome、safari、opera)中会给考虑空白节点。在IE浏览器中不考虑。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> ul = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"ul"</span>)[<span class="number">0</span>];</div><div class="line"><span class="built_in">console</span>.log(ul.previousSibling);</div><div class="line"><span class="built_in">console</span>.log(ul.nextSibling);</div><div class="line"><span class="built_in">console</span>.log(ul.firstChild);</div><div class="line"><span class="built_in">console</span>.log(ul.lastChild);</div><div class="line"><span class="built_in">console</span>.log(ul.childNodes);</div></pre></td></tr></table></figure>
+<h3 id="父节点"><a href="#父节点" class="headerlink" title="父节点"></a>父节点</h3><p>节点.parentNode;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(ul.parentNode);</div><div class="line"><span class="comment">//&lt;body&gt;...&lt;/body&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="操作节点"><a href="#操作节点" class="headerlink" title="操作节点"></a>操作节点</h3><h4 id="添加节点appendChild"><a href="#添加节点appendChild" class="headerlink" title="添加节点appendChild()"></a>添加节点<code>appendChild()</code></h4><p><strong>用于向 <code>childNodes</code>列表的末尾添加一个节点</strong>。添加节点后， <code>childNodes</code>的新增节点、父节点及以前的最后一个子节点的关系指针都会相应地得到更新。更新完成后，<code>appendChild()</code>返回新增的节点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> divs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">1</span>]</div><div class="line">divs.appendChild(ul.lastChild);</div></pre></td></tr></table></figure>
+<h4 id="插入节点insertBefore"><a href="#插入节点insertBefore" class="headerlink" title="插入节点insertBefore()"></a>插入节点<code>insertBefore()</code></h4><p>如果需要把节点放在<code>childNodes</code>列表中某个特定的位置上，而不是放在末尾，那么可以使用<code>insertBefore()</code>方法。</p>
+<p>这个方法接受两个参数：</p>
+<ul>
+<li>要插入的节点</li>
+<li>作为参照的节点。</li>
+</ul>
+<p>如果参照节点是null，则<code>insertBefore()</code>与<code>appendChild()</code>执行相同的操作</p>
+<p><code>appendChild()</code>和<code>insertBefore()</code>方法都只插入节点，不会移除节点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> pp = <span class="built_in">document</span>.querySelector(<span class="string">"p"</span>);</div><div class="line">ul.insertBefore(pp,ul.firstChild);</div></pre></td></tr></table></figure>
+<h4 id="替换节点replaceChild"><a href="#替换节点replaceChild" class="headerlink" title="替换节点replaceChild()"></a>替换节点<code>replaceChild()</code></h4><p><code>replaceChild()</code>方法接受的两个参数是：</p>
+<ul>
+<li>要插入的节点</li>
+<li>要替换的节点。</li>
+</ul>
+<p>要替换的节点将由这个方法返回并从文档树中被移除，同时由要插入的节点占据其位置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> pp = <span class="built_in">document</span>.querySelector(<span class="string">"p"</span>);</div><div class="line">ul.replaceChild(pp,ul.firstChild);</div></pre></td></tr></table></figure>
+<h4 id="移除节点removeChild"><a href="#移除节点removeChild" class="headerlink" title="移除节点removeChild()"></a>移除节点<code>removeChild()</code></h4><p><code>removeChild()</code>方法。这个方法接受一个参数，即要移除<br>的节点。被移除的节点将成为方法的返回值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> pp = <span class="built_in">document</span>.querySelector(<span class="string">"p"</span>);</div><div class="line">ul.removeChild(pp);</div></pre></td></tr></table></figure>
+<p><strong>四个方法操作的都是某个节点的子节点，也就是说，要使用这几个方法必须先取得父节点（使用parentNode属性）。另外，并不是所有类型的节点都有子节点，如果在不支持子节点的节点上调用了这些方法，将会导致错误发生。</strong></p>
+<h4 id="复制节点"><a href="#复制节点" class="headerlink" title="复制节点"></a>复制节点</h4><blockquote>
+<p>有两个方法是所有类型的节点都有的。第一个就是<code>cloneNode()</code>，用于创建调用这个方法的节点的一个完全相同的副本。 </p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> clones = ul.cloneNode(<span class="literal">true</span>);</div><div class="line"><span class="built_in">console</span>.log(clones);</div><div class="line">divs.appendChild(clones);</div><div class="line">ul.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="number">1</span>)</div><div class="line">&#125;</div><div class="line"><span class="comment">//被clone点击不会弹出1</span></div></pre></td></tr></table></figure>
+<p><code>cloneNode()</code>方法不会复制添加到<code>DOM</code>节点中的<code>JavaScript</code> 属性，例如事件处理程序等。</p>
+<p>这个方法只复制特性、（在明确指定的情况下也复制）子节点其他一切都不会复制。</p>
+<p><code>IE</code>在此存在一个<code>bug</code>，即它会复制事件处理程序，所以我们建议在复制之前最好先移除事件处理程序。</p>
+<h3 id="属性值操作"><a href="#属性值操作" class="headerlink" title="属性值操作"></a>属性值操作</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&lt;input  type=”text”  name=”username”  value=”tom”  class=”orange” /&gt;</span></div><div class="line"><span class="comment">//&lt;a href=”http://www.baidu.com”  addr=’beijing’ target=”_blank”&gt;百度&lt;/a&gt;</span></div><div class="line"></div><div class="line"><span class="comment">//①获取属性值</span></div><div class="line"><span class="comment">//itnode.getAttribute(属性名称);规定的和自定义的都可以获取</span></div><div class="line">input.getAttribute(<span class="string">"name"</span>);</div><div class="line"><span class="comment">//②设置属性值</span></div><div class="line"><span class="comment">//itnode.setAttribute(名称，值);规定的和自定义的都可以设置</span></div><div class="line">a.setAttribute(<span class="string">"addr"</span>,<span class="string">"shanghai"</span>);</div></pre></td></tr></table></figure>
+<h2 id="DOM-操作技术"><a href="#DOM-操作技术" class="headerlink" title="DOM 操作技术"></a>DOM 操作技术</h2><h3 id="1、选择符-API"><a href="#1、选择符-API" class="headerlink" title="1、选择符 API"></a>1、选择符 API</h3><p><code>querySelector()</code></p>
+<p><code>querySelectorAll()</code></p>
+<p><code>matchesSelector()</code></p>
+<p>这个方法接收一个参数，即<code>CSS</code>选择符，如果调用元素与该选择符匹配，返回 <code>true</code>；否则，返回 <code>false</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.body.matchesSelector(<span class="string">"body.page1"</span>))&#123;</div><div class="line"><span class="comment">//true</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//浏览器前缀+MatchesSelector()</span></div><div class="line"><span class="comment">// msMatchesSelector() ie</span></div><div class="line"><span class="comment">// mozMatchesSelector() Firefox </span></div><div class="line"><span class="comment">// webkitMatchesSelector() Chrome</span></div></pre></td></tr></table></figure>
+<h3 id="2、元素遍历"><a href="#2、元素遍历" class="headerlink" title="2、元素遍历"></a>2、元素遍历</h3><p><code>childElementCount</code>：返回子元素（不包括文本节点和注释）的个数。</p>
+<ul>
+<li><p>[ ] <code>firstElementChild</code>：指向第一个子元素；<code>firstChild</code> 的元素版。</p>
+</li>
+<li><p>[ ] <code>lastElementChild</code>：指向最后一个子元素；<code>lastChild</code> 的元素版。</p>
+</li>
+<li><p>[ ] <code>previousElementSibling</code>：指向前一个同辈元素； <code>previousSibling</code> 的元素版。</p>
+</li>
+<li><p>[ ] <code>nextElementSibling</code>：指向后一个同辈元素； <code>nextSibling</code> 的元素版。</p>
+</li>
+</ul>
+<p>支持的浏览器为 <code>DOM</code>元素添加了这些属性，利用这些元素不必担心空白文本节点，从而可以更方便地查找 <code>DOM</code> 元素了。</p>
+<h3 id="3、与类相关的扩充"><a href="#3、与类相关的扩充" class="headerlink" title="3、与类相关的扩充"></a>3、与类相关的扩充</h3><p><code>classList</code> 属性</p>
+<blockquote>
+<p>在操作类名时，需要通过className属性添加、删除和替换类名。因为 className中是一个字符串，所以即使只修改字符串一部分，也必须每次都设置整个字符串的值。</p>
+</blockquote>
+<ul>
+<li>add(value)：将给定的字符串值添加到列表中。如果值已经存在，就不添加了。</li>
+<li>contains(value)：表示列表中是否存在给定的值，如果存在则返回 true，否则返回 false。</li>
+<li>remove(value)：从列表中删除给定的字符串。</li>
+<li>toggle(value)：如果列表中已经存在给定的值，删除它；如果列表中没有给定的值，添加它。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">div.classList.add(<span class="string">"user"</span>);</div><div class="line">div.classList.contains(<span class="string">"user"</span>);</div><div class="line">div.classList.remove(<span class="string">"user"</span>);</div><div class="line">div.classList.toggle(<span class="string">"user"</span>);</div></pre></td></tr></table></figure>
+<h2 id="DOM2-和-DOM3"><a href="#DOM2-和-DOM3" class="headerlink" title="DOM2 和 DOM3"></a>DOM2 和 DOM3</h2><h3 id="1-偏移量"><a href="#1-偏移量" class="headerlink" title="1. 偏移量"></a>1. 偏移量</h3><ul>
+<li><code>offsetHeight</code>：元素在垂直方向上占用的空间大小，以像素计。包括元素的高度、（可见的）<br>水平滚动条的高度、上边框高度和下边框高度。</li>
+<li><code>offsetWidth</code>：元素在水平方向上占用的空间大小，以像素计。包括元素的宽度、（可见的）垂<br>直滚动条的宽度、左边框宽度和右边框宽度。</li>
+<li><code>offsetLeft</code>：元素的左外边框至包含元素的左内边框之间的像素距离。</li>
+<li><code>offsetTop</code>：元素的上外边框至包含元素的上内边框之间的像素距离。</li>
+</ul>
+<p><img src="http://otxurl2qj.bkt.clouddn.com/1507710627%281%29.png" alt="偏移量"></p>
+<h3 id="2、客户区大小"><a href="#2、客户区大小" class="headerlink" title="2、客户区大小"></a>2、客户区大小</h3><p>元素的客户区大小（<code>clientdimension</code>），指的是元素内容及其内边距所占据的空间大小。有关客户区大小的属性有两个： <code>clientWidth</code> 和 <code>clientHeight</code>。</p>
+<ul>
+<li><code>clientWidth</code> 属性是元素内容区宽度加上左右内边距宽度；</li>
+<li><code>clientHeight</code>属性是元素内容区高度加上上下内边距高度。</li>
+</ul>
+<p><img src="http://otxurl2qj.bkt.clouddn.com/1507710880%281%29.png" alt="客户区大小"></p>
+<h3 id="3、滚动大小"><a href="#3、滚动大小" class="headerlink" title="3、滚动大小"></a>3、滚动大小</h3><ul>
+<li><code>scrollHeight</code>：在没有滚动条的情况下，元素内容的总高度</li>
+<li><code>scrollWidth</code>：在没有滚动条的情况下，元素内容的总宽度</li>
+<li><code>scrollLeft</code>：被隐藏在内容区域左侧的像素数。通过设置这个属性可以改变元素的滚动位置。</li>
+<li><code>scrollTop</code>：被隐藏在内容区域上方的像素数。通过设置这个属性可以改变元素的滚动位置。</li>
+</ul>
+<p><img src="http://otxurl2qj.bkt.clouddn.com/1507710920%281%29.png" alt="滚动大小"></p>
+<h3 id="4、确定元素大小"><a href="#4、确定元素大小" class="headerlink" title="4、确定元素大小"></a>4、确定元素大小</h3><p><code>IE、 Firefox 3+、 Safari 4+、 Opera 9.5</code>及 <code>Chrome</code> 为每个元素都提供了一个 <code>getBoundingClientRect()</code>方<br>法。</p>
+<p>这个方法返回会一个矩形对象，包含 4 个属性：<br><code>left</code>、 <code>top</code>、 <code>right</code>和<code>bottom</code>。</p>
+<p>这些属性给出了元素在页面中相对于视口的位置。但是，浏览器的实现稍有不同。IE8及更早版本认为文档的左上角坐标是(2, 2)，而其他浏览器包括IE9则将传统的(0,0)作为起点坐标。因此，就需要在一开始检查一下位于(0,0)处的元素的位置，在IE8及更早版本中，会返回(2,2)，而在其他浏览器中会返回(0,0)。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>谢谢你请我吃糖果</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.jpg" alt="张鑫 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="张鑫 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/DOM/" rel="tag"># DOM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/24/Vue/" rel="next" title="第一节Vue指令">
+                <i class="fa fa-chevron-left"></i> 第一节Vue指令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/24/事件/" rel="prev" title="事件">
+                事件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/blog.jpg"
+               alt="张鑫" />
+          <p class="site-author-name" itemprop="name">张鑫</p>
+           
+              <p class="site-description motion-element" itemprop="description">Blog</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ReZhangxin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/p/1005055307075677/home?from=page_100505&mod=TAB#place" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DOM"><span class="nav-number">1.</span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM1-节点层次"><span class="nav-number">1.1.</span> <span class="nav-text">DOM1 节点层次</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#元素节点获取"><span class="nav-number">1.1.1.</span> <span class="nav-text">元素节点获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本节点获取"><span class="nav-number">1.1.2.</span> <span class="nav-text">文本节点获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兄弟节点"><span class="nav-number">1.1.3.</span> <span class="nav-text">兄弟节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父节点"><span class="nav-number">1.1.4.</span> <span class="nav-text">父节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作节点"><span class="nav-number">1.1.5.</span> <span class="nav-text">操作节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加节点appendChild"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">添加节点appendChild()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入节点insertBefore"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">插入节点insertBefore()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换节点replaceChild"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">替换节点replaceChild()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除节点removeChild"><span class="nav-number">1.1.5.4.</span> <span class="nav-text">移除节点removeChild()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制节点"><span class="nav-number">1.1.5.5.</span> <span class="nav-text">复制节点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性值操作"><span class="nav-number">1.1.6.</span> <span class="nav-text">属性值操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM-操作技术"><span class="nav-number">1.2.</span> <span class="nav-text">DOM 操作技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、选择符-API"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、选择符 API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、元素遍历"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、元素遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、与类相关的扩充"><span class="nav-number">1.2.3.</span> <span class="nav-text">3、与类相关的扩充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM2-和-DOM3"><span class="nav-number">1.3.</span> <span class="nav-text">DOM2 和 DOM3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-偏移量"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. 偏移量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、客户区大小"><span class="nav-number">1.3.2.</span> <span class="nav-text">2、客户区大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、滚动大小"><span class="nav-number">1.3.3.</span> <span class="nav-text">3、滚动大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、确定元素大小"><span class="nav-number">1.3.4.</span> <span class="nav-text">4、确定元素大小</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张鑫</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
