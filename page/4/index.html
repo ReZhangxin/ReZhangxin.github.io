@@ -752,7 +752,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/12/video/">
+    <link itemprop="mainEntityOfPage" href="http://zhangss.win/2017/08/12/scroll/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张鑫">
@@ -771,7 +771,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/12/video/" itemprop="url">自定义video</a></h1>
+                <a class="post-title-link" href="/2017/08/12/scroll/" itemprop="url">获取浏览器的位置</a></h1>
         
 
         <div class="post-meta">
@@ -844,18 +844,13 @@
 
       
         
-          <h2 id="Node-textContent"><a href="#Node-textContent" class="headerlink" title="Node.textContent"></a>Node.textContent</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p> <code>const icon = this.paused ? &#39;►&#39; : &#39;❚ ❚&#39;;</code><br> <code>toggle.textContent = icon;</code></p>
+          <h2 id="关于浏览器各种位置的获取"><a href="#关于浏览器各种位置的获取" class="headerlink" title="关于浏览器各种位置的获取"></a>关于浏览器各种位置的获取</h2><blockquote>
+<p><code>clientWidth</code> <code>offsetWidth</code> <code>scrollTop</code> <code>innerHeight</code></p>
 </blockquote>
-<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><blockquote>
-<ul>
-<li>Node.textContent属性表示一个节点及其后代的文本内容</li>
-<li><code>document.documentElement.textContent</code>返回整个文档文本以及<br> CDATA数据(不应由 XML 解析器进行解析的文本数据)</li>
-</ul>
-</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="built_in">window</span>.innerHeight; <span class="comment">//获得浏览器窗口的内容区域的高度,包含水平滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> b = <span class="built_in">window</span>.innerWidth;  <span class="comment">//获得浏览器窗口的内容区域的宽度,包含垂直滚动条(如果有的话).</span></div><div class="line"><span class="keyword">const</span> loc = Window.location;  <span class="comment">//获取、设置window对象的location, 或者当前的 URL.</span></div><div class="line"><span class="keyword">const</span> y = <span class="built_in">window</span>.scrollY;     <span class="comment">//y 是文档从顶部开始滚动过的像素值。</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/12/video/#more" rel="contents">
+            <a class="btn" href="/2017/08/12/scroll/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
